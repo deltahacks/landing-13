@@ -1,0 +1,58 @@
+name: CI
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events
+  pull_request:
+    branches: ["*"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  pr-lint:
+    name: Run PR Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: semantic-pull-request
+        uses: amannn/action-semantic-pull-request@v4.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  prettier-lint-check:
+    name: Run Prettier Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run format:check
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          # Get branch name from different contexts
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            branch_name="${{ github.head_ref }}"
+          else
+            branch_name="${{ github.ref_name }}"
+          fi
+          echo "Checking branch name: $branch_name"
+          # Check if branch name matches pattern */*, 
+          # Must contain exactly one slash with content before and after
+          if [[ ! "$branch_name" =~ ^[^/]+/.+$ ]]; then
+            echo "❌ Error: Branch name '$branch_name' does not match required pattern 'name/title'"
+            echo ""
+            echo "Examples of valid branch names:"
+            echo "  - moeezs/hero-section"
+            echo ""
+            echo "Current branch '$branch_name' should be renamed to follow the pattern."
+            exit 1
+          fi
+          echo "✅ Branch name '$branch_name' follows naming convention"
