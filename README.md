@@ -1,6 +1,6 @@
 # Deltahacks 13 Landing Site
 
-DeltaHacks is an annual hackathon hosted at McMaster University. This is the official landing site for DeltaHacks 13, hosted in January 2026.
+DeltaHacks is an annual hackathon hosted at McMaster University. This is the official landing site for DeltaHacks 13, hosted in January 2026
 
 ## Built with
 
