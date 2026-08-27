@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Fragment } from "react";
 
-import statsBg from "~/app/stats_bg.png";
-import cloudDino from "~/sections/cloud_dino.webp";
-import clouds from "~/sections/clouds.png";
-import flyingDino from "~/sections/flying_dino.webp";
-import parachuteDino from "~/sections/parachute_dino.webp";
+import statsBg from "~/assets/stats_bg.webp";
+import cloudDino from "~/assets/cloud_dino.webp";
+import clouds from "~/assets/clouds.webp";
+import flyingDino from "~/assets/flying_dino.webp";
+import parachuteDino from "~/assets/parachute_dino.webp";
 import styles from "./Stats.module.css";
 
 const statFields = [

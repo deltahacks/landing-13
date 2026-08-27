@@ -26,6 +26,12 @@
   animation: parachute-dino-fly 8s linear infinite;
 }
 
+@media (min-width: 768px) {
+  .parachuteDinoFly {
+    animation-duration: 14s;
+  }
+}
+
 @keyframes cloud-dino-drift {
   0%,
   100% {
