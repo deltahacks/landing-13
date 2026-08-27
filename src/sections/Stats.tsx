@@ -44,7 +44,7 @@ const statFields = [
 const xJitterPx = 2.0;
 const yJitterPx = 2.8;
 const rotationJitterDeg = 12;
-const spacingJitterEm = 0.30;
+const spacingJitterEm = 0.3;
 const spaceWidthEm = 0.46;
 const curveRadiusPx = 120;
 const curveArcDeg = 68;
@@ -74,7 +74,8 @@ function getCurveTransform(
   const angleRadians = (angle * Math.PI) / 180;
   const endOffset = Math.cos((curveArcDeg / 2) * (Math.PI / 180));
   const direction = curve === "top" ? -1 : 1;
-  const yOffset = direction * curveRadiusPx * (Math.cos(angleRadians) - endOffset);
+  const yOffset =
+    direction * curveRadiusPx * (Math.cos(angleRadians) - endOffset);
   const tangentRotation = curve === "top" ? angle : -angle;
 
   return {
@@ -90,7 +91,7 @@ export default function Stats() {
       className="relative w-full overflow-hidden bg-[#f7e8c8]"
     >
       <h2
-        className="pointer-events-none absolute left-5 top-4 z-20 text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:left-1/2 md:top-[14.5%] md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]"
+        className="pointer-events-none absolute top-4 left-5 z-20 text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:top-[14.5%] md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]"
         style={{
           fontFamily: "var(--font-young-serif)",
         }}
@@ -105,7 +106,9 @@ export default function Stats() {
         className="block h-auto w-full max-w-none object-contain"
         sizes="100vw"
       />
-      <div className={`${styles.flyingDinoEnter} pointer-events-none absolute left-[32%] top-[-7%] w-[80%] md:left-0 md:top-[11%] md:w-[48%]`}>
+      <div
+        className={`${styles.flyingDinoEnter} pointer-events-none absolute top-[-7%] left-[32%] w-[80%] md:top-[11%] md:left-0 md:w-[48%]`}
+      >
         <Image
           src={flyingDino}
           alt=""
@@ -118,14 +121,14 @@ export default function Stats() {
         src={parachuteDino}
         alt=""
         aria-hidden="true"
-        className={`${styles.parachuteDinoFly} pointer-events-none absolute left-[0%] top-[50%] h-auto w-[42%] select-none md:left-[20%] md:top-[50%] md:w-[29%]`}
+        className={`${styles.parachuteDinoFly} pointer-events-none absolute top-[50%] left-[0%] h-auto w-[42%] select-none md:top-[50%] md:left-[20%] md:w-[29%]`}
         sizes="29vw"
       />
       <Image
         src={cloudDino}
         alt=""
         aria-hidden="true"
-        className={`${styles.cloudDinoDrift} pointer-events-none absolute left-[26%] top-[34%] h-auto w-[52%] select-none md:left-[38%] md:top-[27%] md:w-[58%]`}
+        className={`${styles.cloudDinoDrift} pointer-events-none absolute top-[34%] left-[26%] h-auto w-[52%] select-none md:top-[27%] md:left-[38%] md:w-[58%]`}
         sizes="58vw"
       />
       <Image
@@ -139,14 +142,14 @@ export default function Stats() {
         <Fragment key={field.text}>
           <p
             key={`${field.text}-mobile`}
-            className={`pointer-events-none absolute z-20 whitespace-nowrap font-bold text-[18px] leading-[100%] tracking-normal text-white md:hidden ${index === statFields.length - 1 ? "hidden" : ""} ${field.mobileClassName}`}
+            className={`pointer-events-none absolute z-20 text-[18px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:hidden ${index === statFields.length - 1 ? "hidden" : ""} ${field.mobileClassName}`}
             style={{ fontFamily: "var(--font-satoshi)" }}
           >
             {field.text}
           </p>
           <p
             key={`${field.text}-desktop`}
-            className={`pointer-events-none absolute z-20 hidden whitespace-nowrap font-bold text-[20px] leading-[100%] tracking-normal text-white md:block ${field.desktopClassName}`}
+            className={`pointer-events-none absolute z-20 hidden text-[20px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:block ${field.desktopClassName}`}
             style={{ fontFamily: "var(--font-satoshi)" }}
           >
             {Array.from(field.text).map((char, index) => {
@@ -156,8 +159,16 @@ export default function Stats() {
                 index,
                 field.text.length,
               );
-              const xJitter = toRange(hashToUnit(`${seed}-x`), -xJitterPx, xJitterPx);
-              const yJitter = toRange(hashToUnit(`${seed}-y`), -yJitterPx, yJitterPx);
+              const xJitter = toRange(
+                hashToUnit(`${seed}-x`),
+                -xJitterPx,
+                xJitterPx,
+              );
+              const yJitter = toRange(
+                hashToUnit(`${seed}-y`),
+                -yJitterPx,
+                yJitterPx,
+              );
               const rotation = toRange(
                 hashToUnit(`${seed}-r`),
                 -rotationJitterDeg,
