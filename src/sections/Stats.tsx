@@ -6,6 +6,7 @@ import cloudDino from "~/sections/cloud_dino.webp";
 import clouds from "~/sections/clouds.png";
 import flyingDino from "~/sections/flying_dino.webp";
 import parachuteDino from "~/sections/parachute_dino.webp";
+import styles from "./Stats.module.css";
 
 const statFields = [
   {
@@ -104,25 +105,27 @@ export default function Stats() {
         className="block h-auto w-full max-w-none object-contain"
         sizes="100vw"
       />
-      <Image
-        src={flyingDino}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[32%] top-[-7%] h-auto w-[80%] -scale-x-100 select-none md:left-0 md:top-[11%] md:w-[48%] md:scale-x-100"
-        sizes="48vw"
-      />
+      <div className={`${styles.flyingDinoEnter} pointer-events-none absolute left-[32%] top-[-7%] w-[80%] md:left-0 md:top-[11%] md:w-[48%]`}>
+        <Image
+          src={flyingDino}
+          alt=""
+          aria-hidden="true"
+          className="h-auto w-full -scale-x-100 select-none md:scale-x-100"
+          sizes="48vw"
+        />
+      </div>
       <Image
         src={parachuteDino}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[0%] top-[50%] h-auto w-[42%] select-none md:left-[20%] md:top-[50%] md:w-[29%]"
+        className={`${styles.parachuteDinoFly} pointer-events-none absolute left-[0%] top-[50%] h-auto w-[42%] select-none md:left-[20%] md:top-[50%] md:w-[29%]`}
         sizes="29vw"
       />
       <Image
         src={cloudDino}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[26%] top-[34%] h-auto w-[52%] select-none md:left-[38%] md:top-[27%] md:w-[58%]"
+        className={`${styles.cloudDinoDrift} pointer-events-none absolute left-[26%] top-[34%] h-auto w-[52%] select-none md:left-[38%] md:top-[27%] md:w-[58%]`}
         sizes="58vw"
       />
       <Image
