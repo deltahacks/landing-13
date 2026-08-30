@@ -101,7 +101,7 @@ export default function Stats() {
           alt=""
           aria-hidden="true"
           className="h-auto w-full -scale-x-100 select-none md:scale-x-100"
-          sizes="48vw"
+          sizes="(max-width: 768px) 80vw, 48vw"
         />
       </div>
       <Image
@@ -109,14 +109,14 @@ export default function Stats() {
         alt=""
         aria-hidden="true"
         className={`${styles.parachuteDinoFly} pointer-events-none absolute top-[50%] left-[0%] h-auto w-[42%] select-none md:top-[50%] md:left-[20%] md:w-[29%]`}
-        sizes="29vw"
+        sizes="(max-width: 768px) 42vw, 29vw"
       />
       <Image
         src={cloudDino}
         alt=""
         aria-hidden="true"
         className={`${styles.cloudDinoDrift} pointer-events-none absolute top-[34%] left-[26%] h-auto w-[52%] select-none md:top-[27%] md:left-[38%] md:w-[58%]`}
-        sizes="58vw"
+        sizes="(max-width: 768px) 52vw, 58vw"
       />
       <Image
         src={clouds}
