@@ -14,12 +14,12 @@ import MenuIcon from "./svgs/MenuIcon";
 import CloseIcon from "./svgs/CloseIcon";
 import MLHTrustBadge from "./svgs/MLHTrustBadge";
 
-// Anchor targets follow the DH13 design (note: "Past Events", not "Speakers").
-// These sections don't exist yet — links safely no-op until they ship.
+// Anchor targets for the site's sections. These sections don't exist yet —
+// links safely no-op until they ship with matching IDs.
 const sectionLinks = [
   { label: "About", href: "#about" },
   { label: "Statistics", href: "#statistics" },
-  { label: "Past Events", href: "#past-events" },
+  { label: "Speakers", href: "#speakers" },
   { label: "Sponsors", href: "#sponsors" },
   { label: "FAQ", href: "#faq" },
 ];
