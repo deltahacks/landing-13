@@ -53,3 +53,64 @@
     animation: none;
   }
 }
+
+/* Stat field positioning */
+.stat0Desktop {
+  left: 44%;
+  top: 30.5%;
+}
+
+.stat0Mobile {
+  left: 6%;
+  top: 22%;
+}
+
+.stat1Desktop {
+  left: 64%;
+  top: 34.5%;
+}
+
+.stat1Mobile {
+  left: 10%;
+  top: 32%;
+}
+
+.stat2Desktop {
+  left: 43.5%;
+  top: 41%;
+}
+
+.stat2Mobile {
+  left: 41%;
+  top: 62%;
+}
+
+.stat3Desktop {
+  left: 52%;
+  top: 48%;
+  transform: rotate(28deg);
+}
+
+.stat3Mobile {
+  left: 54%;
+  top: 72%;
+}
+
+.stat4Desktop {
+  left: 82%;
+  top: 54%;
+  transform: rotate(-35deg);
+}
+
+.stat4Mobile {
+  left: 28%;
+  top: 82%;
+}
+
+.fontYoungSerif {
+  font-family: var(--font-young-serif);
+}
+
+.fontSatoshi {
+  font-family: var(--font-satoshi);
+}

@@ -1,43 +1,33 @@
 import Image from "next/image";
 import { Fragment } from "react";
 
-import statsBg from "~/assets/stats_bg.webp";
-import cloudDino from "~/assets/cloud_dino.webp";
-import clouds from "~/assets/clouds.webp";
-import flyingDino from "~/assets/flying_dino.webp";
-import parachuteDino from "~/assets/parachute_dino.webp";
-import styles from "./Stats.module.css";
+import statsBg from "~/assets/stats/stats_bg.webp";
+import cloudDino from "~/assets/stats/cloud_dino.webp";
+import clouds from "~/assets/stats/clouds.webp";
+import flyingDino from "~/assets/stats/flying_dino.webp";
+import parachuteDino from "~/assets/stats/parachute_dino.webp";
+import styles from "../styles/Stats.module.css";
 
 const statFields = [
   {
     text: "24 workshops",
     curve: "top",
-    desktopClassName: "left-[44%] top-[30.5%]",
-    mobileClassName: "left-[6%] top-[22%]",
   },
   {
     text: "224+ projects submitted",
     curve: "top",
-    desktopClassName: "left-[64%] top-[34.5%]",
-    mobileClassName: "left-[10%] top-[32%]",
   },
   {
     text: "10+ schools",
     curve: "bottom",
-    desktopClassName: "left-[43.5%] top-[41%]",
-    mobileClassName: "left-[41%] top-[62%]",
   },
   {
     text: "1000+ hackers",
     curve: "bottom",
-    desktopClassName: "left-[52%] top-[48%] rotate-[28deg]",
-    mobileClassName: "left-[54%] top-[72%]",
   },
   {
     text: "60+ mentors",
     curve: "bottom",
-    desktopClassName: "left-[82%] top-[54%] rotate-[-35deg]",
-    mobileClassName: "left-[28%] top-[82%]",
   },
 ] as const;
 
@@ -91,10 +81,7 @@ export default function Stats() {
       className="relative w-full overflow-hidden bg-[#f7e8c8]"
     >
       <h2
-        className="pointer-events-none absolute top-4 left-5 z-20 text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:top-[14.5%] md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]"
-        style={{
-          fontFamily: "var(--font-young-serif)",
-        }}
+        className={`${styles.fontYoungSerif} pointer-events-none absolute top-4 left-5 z-20 text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:top-[14.5%] md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]`}
       >
         Last year we had...
       </h2>
@@ -142,15 +129,13 @@ export default function Stats() {
         <Fragment key={field.text}>
           <p
             key={`${field.text}-mobile`}
-            className={`pointer-events-none absolute z-20 text-[18px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:hidden ${index === statFields.length - 1 ? "hidden" : ""} ${field.mobileClassName}`}
-            style={{ fontFamily: "var(--font-satoshi)" }}
+            className={`${styles.fontSatoshi} pointer-events-none absolute z-20 text-[18px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:hidden ${index === statFields.length - 1 ? "hidden" : ""} ${styles[`stat${index}Mobile`]}`}
           >
             {field.text}
           </p>
           <p
             key={`${field.text}-desktop`}
-            className={`pointer-events-none absolute z-20 hidden text-[20px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:block ${field.desktopClassName}`}
-            style={{ fontFamily: "var(--font-satoshi)" }}
+            className={`${styles.fontSatoshi} pointer-events-none absolute z-20 hidden text-[20px] leading-[100%] font-bold tracking-normal whitespace-nowrap text-white md:block ${styles[`stat${index}Desktop`]}`}
           >
             {Array.from(field.text).map((char, index) => {
               const seed = `${field.text}-${index}`;
@@ -182,7 +167,7 @@ export default function Stats() {
               return (
                 <span
                   key={`${field.text}-${index}`}
-                  className="pointer-events-auto inline-block transition-colors duration-200 ease-out hover:text-[#ffd166] hover:[text-shadow:0_0_10px_rgba(255,209,102,0.95),0_0_24px_rgba(255,209,102,0.55)]"
+                  className="pointer-events-auto inline-block transition-colors duration-200 ease-out text-white hover:text-[#ffd166] hover:[text-shadow:0_0_10px_rgba(255,209,102,0.95),0_0_24px_rgba(255,209,102,0.55)]"
                   style={{
                     transform: `translate(${xJitter.toFixed(2)}px, ${(curveTransform.yOffset + yJitter).toFixed(2)}px) rotate(${curveTransform.tangentRotation.toFixed(2)}deg) rotate(${rotation.toFixed(2)}deg)`,
                     marginRight,
