@@ -1,13 +1,30 @@
 import { useEffect, useRef, useCallback } from "react";
 
+const ANIMATION_DURATION_MS = 200;
+
 export function useAccordionAnimation(
   detailsRef: React.RefObject<HTMLDetailsElement | null>,
   isOpen: boolean,
   onToggle: () => void,
 ) {
   const animationRef = useRef<Animation | null>(null);
-  const isClosingRef = useRef(false);
-  const isExpandingRef = useRef(false);
+  const rafIdRef = useRef<number | null>(null);
+  // Target state of the in-flight animation, or null when idle.
+  const animatingToRef = useRef<boolean | null>(null);
+
+  const onToggleRef = useRef(onToggle);
+  onToggleRef.current = onToggle;
+
+  const cancelPending = useCallback(() => {
+    if (rafIdRef.current !== null) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = null;
+    }
+    if (animationRef.current) {
+      animationRef.current.cancel();
+      animationRef.current = null;
+    }
+  }, []);
 
   const onAnimationFinish = useCallback(
     (open: boolean) => {
@@ -15,8 +32,7 @@ export function useAccordionAnimation(
 
       detailsRef.current.open = open;
       animationRef.current = null;
-      isClosingRef.current = false;
-      isExpandingRef.current = false;
+      animatingToRef.current = null;
 
       detailsRef.current.style.height = "";
       detailsRef.current.style.overflow = "";
@@ -29,7 +45,7 @@ export function useAccordionAnimation(
 
     const el = detailsRef.current;
 
-    isClosingRef.current = true;
+    cancelPending();
 
     const startHeight = `${el.offsetHeight}px`;
 
@@ -40,27 +56,18 @@ export function useAccordionAnimation(
 
     const endHeight = `${collapsedHeight}px`;
 
-    if (animationRef.current) {
-      animationRef.current.cancel();
-    }
-
     animationRef.current = el.animate(
       { height: [startHeight, endHeight] },
-      { duration: 200, easing: "ease-out" },
+      { duration: ANIMATION_DURATION_MS, easing: "ease-out" },
     );
 
     animationRef.current.onfinish = () => onAnimationFinish(false);
-    animationRef.current.oncancel = () => {
-      isClosingRef.current = false;
-    };
-  }, [detailsRef, onAnimationFinish]);
+  }, [detailsRef, onAnimationFinish, cancelPending]);
 
   const expand = useCallback(() => {
     if (!detailsRef.current) return;
 
     const el = detailsRef.current;
-
-    isExpandingRef.current = true;
 
     const startHeight = `${el.offsetHeight}px`;
 
@@ -77,13 +84,10 @@ export function useAccordionAnimation(
 
     animationRef.current = el.animate(
       { height: [startHeight, endHeight] },
-      { duration: 200, easing: "ease-out" },
+      { duration: ANIMATION_DURATION_MS, easing: "ease-out" },
     );
 
     animationRef.current.onfinish = () => onAnimationFinish(true);
-    animationRef.current.oncancel = () => {
-      isExpandingRef.current = false;
-    };
   }, [detailsRef, onAnimationFinish]);
 
   const open = useCallback(() => {
@@ -91,11 +95,16 @@ export function useAccordionAnimation(
 
     const el = detailsRef.current;
 
+    cancelPending();
+
     el.style.height = `${el.offsetHeight}px`;
     el.open = true;
 
-    window.requestAnimationFrame(() => expand());
-  }, [detailsRef, expand]);
+    rafIdRef.current = window.requestAnimationFrame(() => {
+      rafIdRef.current = null;
+      expand();
+    });
+  }, [detailsRef, expand, cancelPending]);
 
   const onClick = useCallback(
     (e: Event) => {
@@ -104,24 +113,26 @@ export function useAccordionAnimation(
       e.preventDefault();
       detailsRef.current.style.overflow = "hidden";
 
-      onToggle();
+      onToggleRef.current();
     },
-    [detailsRef, onToggle],
+    [detailsRef],
   );
 
   useEffect(() => {
-    if (!detailsRef.current) return;
-
     const el = detailsRef.current;
-    const currentlyOpen = el.open;
+    if (!el) return;
 
-    if (isClosingRef.current || isExpandingRef.current) return;
+    const isAnimating = animatingToRef.current !== null;
+    const currentlyOpen = isAnimating ? animatingToRef.current : el.open;
 
-    if (isOpen && !currentlyOpen) {
-      el.style.overflow = "hidden";
+    if (currentlyOpen === isOpen) return;
+
+    animatingToRef.current = isOpen;
+    el.style.overflow = "hidden";
+
+    if (isOpen) {
       open();
-    } else if (!isOpen && currentlyOpen) {
-      el.style.overflow = "hidden";
+    } else {
       shrink();
     }
   }, [isOpen, detailsRef, open, shrink]);
@@ -137,9 +148,7 @@ export function useAccordionAnimation(
 
     return () => {
       summary.removeEventListener("click", onClick);
-      if (animationRef.current) {
-        animationRef.current.cancel();
-      }
+      cancelPending();
     };
-  }, [detailsRef, onClick]);
+  }, [detailsRef, onClick, cancelPending]);
 }
