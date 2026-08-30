@@ -167,7 +167,7 @@ export default function Stats() {
               return (
                 <span
                   key={`${field.text}-${index}`}
-                  className="pointer-events-auto inline-block transition-colors duration-200 ease-out text-white hover:text-[#ffd166] hover:[text-shadow:0_0_10px_rgba(255,209,102,0.95),0_0_24px_rgba(255,209,102,0.55)]"
+                  className="pointer-events-auto inline-block text-white transition-colors duration-200 ease-out hover:text-[#ffd166] hover:[text-shadow:0_0_10px_rgba(255,209,102,0.95),0_0_24px_rgba(255,209,102,0.55)]"
                   style={{
                     transform: `translate(${xJitter.toFixed(2)}px, ${(curveTransform.yOffset + yJitter).toFixed(2)}px) rotate(${curveTransform.tangentRotation.toFixed(2)}deg) rotate(${rotation.toFixed(2)}deg)`,
                     marginRight,
