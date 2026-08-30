@@ -102,6 +102,12 @@ const FAQ: React.FC = () => {
           />
         </div>
 
+        {/* Reserved for future dinosaur mascot artwork (decorative, layered like last year's FAQShelf) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[4%] bottom-0 z-10 hidden md:block"
+        />
+
         <div
           ref={computerRef}
           className="relative isolate mx-auto w-full md:absolute md:inset-x-0 md:top-[8%] md:w-[85%]"
