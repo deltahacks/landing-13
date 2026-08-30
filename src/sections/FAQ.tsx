@@ -65,10 +65,19 @@ const FAQ: React.FC = () => {
   }, []);
 
   return (
-    <section
-      id="faq"
-      className="relative isolate w-full overflow-hidden bg-gradient-to-b from-slate-200 to-slate-300"
-    >
+    <div className="relative w-full">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-48 -translate-y-1/2 backdrop-blur-xl [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 translate-y-1/2 backdrop-blur-xl [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]"
+      />
+      <section
+        id="faq"
+        className="relative isolate w-full overflow-hidden bg-gradient-to-b from-slate-200 to-slate-300"
+      >
       <img
         src="/faq/faq-bg_1x.webp"
         srcSet="/faq/faq-bg_1x.webp 1444w, /faq/faq-bg_2x.webp 2888w, /faq/faq-bg_3x.webp 4332w, /faq/faq-bg_4x.webp 5776w"
@@ -168,12 +177,8 @@ const FAQ: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-16 backdrop-blur-md [mask-image:linear-gradient(to_bottom,transparent,black)]"
-      />
-    </section>
+      </section>
+    </div>
   );
 };
 
