@@ -1,0 +1,116 @@
+@keyframes flying-dino-enter {
+  from {
+    opacity: 0;
+    transform: translate(-34vw, -32vh) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.flyingDinoEnter {
+  animation: flying-dino-enter 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes parachute-dino-fly {
+  from {
+    transform: translateX(calc(-100% - 100vw));
+  }
+  to {
+    transform: translateX(calc(100vw + 100%));
+  }
+}
+
+.parachuteDinoFly {
+  animation: parachute-dino-fly 8s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .parachuteDinoFly {
+    animation-duration: 14s;
+  }
+}
+
+@keyframes cloud-dino-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(6px, -3px) rotate(1deg);
+  }
+}
+
+.cloudDinoDrift {
+  animation: cloud-dino-drift 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flyingDinoEnter,
+  .parachuteDinoFly,
+  .cloudDinoDrift {
+    animation: none;
+  }
+}
+
+/* Stat field positioning */
+.stat0Desktop {
+  left: 44%;
+  top: 30.5%;
+}
+
+.stat0Mobile {
+  left: 6%;
+  top: 22%;
+}
+
+.stat1Desktop {
+  left: 64%;
+  top: 34.5%;
+}
+
+.stat1Mobile {
+  left: 10%;
+  top: 32%;
+}
+
+.stat2Desktop {
+  left: 43.5%;
+  top: 41%;
+}
+
+.stat2Mobile {
+  left: 41%;
+  top: 62%;
+}
+
+.stat3Desktop {
+  left: 52%;
+  top: 48%;
+  transform: rotate(28deg);
+}
+
+.stat3Mobile {
+  left: 54%;
+  top: 72%;
+}
+
+.stat4Desktop {
+  left: 82%;
+  top: 54%;
+  transform: rotate(-35deg);
+}
+
+.stat4Mobile {
+  left: 28%;
+  top: 82%;
+}
+
+.fontYoungSerif {
+  font-family: var(--font-young-serif);
+}
+
+.fontSatoshi {
+  font-family: var(--font-satoshi);
+}
