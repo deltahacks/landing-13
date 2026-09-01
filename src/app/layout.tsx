@@ -1,7 +1,8 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Young_Serif } from "next/font/google";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -9,16 +10,41 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+// Display face for section headings.
+const youngSerif = Young_Serif({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  weight: "400",
+  variable: "--font-young-serif",
+});
+
+// Body face. Not on Google Fonts, so it is self-hosted from Fontshare.
+const satoshi = localFont({
+  src: [
+    {
+      path: "../styles/fonts/Satoshi-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/Satoshi-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/Satoshi-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${youngSerif.variable}`}>
       <body>{children}</body>
     </html>
   );
