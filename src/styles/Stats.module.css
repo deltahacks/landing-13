@@ -10,7 +10,7 @@
 }
 
 .flyingDinoEnter {
-  animation: flying-dino-enter 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: flying-dino-enter 2s cubic-bezier(0.22, 1, 0.36, 1) both paused;
 }
 
 @keyframes parachute-dino-fly {
@@ -23,12 +23,21 @@
 }
 
 .parachuteDinoFly {
-  animation: parachute-dino-fly 8s linear infinite;
+  animation: parachute-dino-fly 8s linear infinite paused;
+}
+
+.flyingDinoEnter.isInView {
+  animation-play-state: running;
+}
+
+.parachuteDinoFly.isInView,
+.cloudDinoDrift.isInView {
+  animation-play-state: running;
 }
 
 @media (min-width: 768px) {
   .parachuteDinoFly {
-    animation-duration: 14s;
+    animation-duration: 10s;
   }
 }
 
@@ -43,7 +52,7 @@
 }
 
 .cloudDinoDrift {
-  animation: cloud-dino-drift 9s ease-in-out infinite;
+  animation: cloud-dino-drift 9s ease-in-out infinite paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { Fragment } from "react";
+import { Fragment, type RefObject, useEffect, useRef, useState } from "react";
 
 import statsBg from "~/assets/stats/stats_bg.webp";
 import cloudDino from "~/assets/stats/cloud_dino.webp";
@@ -74,7 +76,42 @@ function getCurveTransform(
   };
 }
 
+function useInView(ref: RefObject<Element | null>) {
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    if (!element || isInView) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [isInView, ref]);
+
+  return isInView;
+}
+
 export default function Stats() {
+  const flyingDinoRef = useRef<HTMLDivElement>(null);
+  const parachuteDinoRef = useRef<HTMLImageElement>(null);
+  const cloudDinoRef = useRef<HTMLImageElement>(null);
+  const flyingDinoInView = useInView(flyingDinoRef);
+  const parachuteDinoInView = useInView(parachuteDinoRef);
+  const cloudDinoInView = useInView(cloudDinoRef);
+
   return (
     <section
       id="statistics"
@@ -94,7 +131,8 @@ export default function Stats() {
         sizes="100vw"
       />
       <div
-        className={`${styles.flyingDinoEnter} pointer-events-none absolute top-[-7%] left-[32%] w-[80%] md:top-[11%] md:left-0 md:w-[48%]`}
+        ref={flyingDinoRef}
+        className={`${styles.flyingDinoEnter} ${flyingDinoInView ? styles.isInView : ""} pointer-events-none absolute top-[-7%] left-[32%] w-[80%] md:top-[11%] md:left-0 md:w-[48%]`}
       >
         <Image
           src={flyingDino}
@@ -104,18 +142,24 @@ export default function Stats() {
           sizes="(max-width: 768px) 80vw, 48vw"
         />
       </div>
-      <Image
-        src={parachuteDino}
-        alt=""
-        aria-hidden="true"
-        className={`${styles.parachuteDinoFly} pointer-events-none absolute top-[50%] left-[0%] h-auto w-[42%] select-none md:top-[50%] md:left-[20%] md:w-[29%]`}
-        sizes="(max-width: 768px) 42vw, 29vw"
-      />
+      <div
+        ref={parachuteDinoRef}
+        className="pointer-events-none absolute top-[50%] left-[0%] w-[42%] md:top-[50%] md:left-[20%] md:w-[29%]"
+      >
+        <Image
+          src={parachuteDino}
+          alt=""
+          aria-hidden="true"
+          className={`${styles.parachuteDinoFly} ${parachuteDinoInView ? styles.isInView : ""} h-auto w-full select-none`}
+          sizes="(max-width: 768px) 42vw, 29vw"
+        />
+      </div>
       <Image
         src={cloudDino}
         alt=""
         aria-hidden="true"
-        className={`${styles.cloudDinoDrift} pointer-events-none absolute top-[34%] left-[26%] h-auto w-[52%] select-none md:top-[27%] md:left-[38%] md:w-[58%]`}
+        ref={cloudDinoRef}
+        className={`${styles.cloudDinoDrift} ${cloudDinoInView ? styles.isInView : ""} pointer-events-none absolute top-[34%] left-[26%] h-auto w-[52%] select-none md:top-[27%] md:left-[38%] md:w-[58%]`}
         sizes="(max-width: 768px) 52vw, 58vw"
       />
       <Image
