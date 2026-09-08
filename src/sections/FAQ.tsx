@@ -3,6 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Question from "~/components/Question";
 import { faq_questions } from "~/data/FAQQuestionData";
+import computer1x from "~/assets/faq/computer_1x.webp";
+import computer2x from "~/assets/faq/computer_2x.webp";
+import computer3x from "~/assets/faq/computer_3x.webp";
+import computer4x from "~/assets/faq/computer_4x.webp";
+import faqBg1x from "~/assets/faq/faq-bg_1x.webp";
+import faqBg2x from "~/assets/faq/faq-bg_2x.webp";
+import faqBg3x from "~/assets/faq/faq-bg_3x.webp";
+import faqBg4x from "~/assets/faq/faq-bg_4x.webp";
+import faqSticky from "~/assets/faq/faq-sticky.svg";
 
 const MD_BREAKPOINT_PX = 768;
 // Mirrors the `md:top-[8%]` offset applied to the computer image below.
@@ -86,8 +95,8 @@ const FAQ: React.FC = () => {
         className="relative isolate w-full overflow-hidden bg-gradient-to-b from-slate-200 to-slate-300"
       >
         <img
-          src="/faq/faq-bg_1x.webp"
-          srcSet="/faq/faq-bg_1x.webp 1444w, /faq/faq-bg_2x.webp 2888w, /faq/faq-bg_3x.webp 4332w, /faq/faq-bg_4x.webp 5776w"
+          src={faqBg1x.src}
+          srcSet={`${faqBg1x.src} 1444w, ${faqBg2x.src} 2888w, ${faqBg3x.src} 4332w, ${faqBg4x.src} 5776w`}
           sizes="100vw"
           alt=""
           aria-hidden="true"
@@ -100,8 +109,8 @@ const FAQ: React.FC = () => {
         >
           <div className="absolute inset-0 -z-10 overflow-hidden md:contents">
             <img
-              src="/faq/faq-bg_1x.webp"
-              srcSet="/faq/faq-bg_1x.webp 1444w, /faq/faq-bg_2x.webp 2888w, /faq/faq-bg_3x.webp 4332w, /faq/faq-bg_4x.webp 5776w"
+              src={faqBg1x.src}
+              srcSet={`${faqBg1x.src} 1444w, ${faqBg2x.src} 2888w, ${faqBg3x.src} 4332w, ${faqBg4x.src} 5776w`}
               sizes="100vw"
               alt=""
               aria-hidden="true"
@@ -121,8 +130,8 @@ const FAQ: React.FC = () => {
           >
             <div className="absolute inset-0 overflow-hidden md:contents">
               <img
-                src="/faq/computer_1x.webp"
-                srcSet="/faq/computer_1x.webp 1138w, /faq/computer_2x.webp 2276w, /faq/computer_3x.webp 3414w, /faq/computer_4x.webp 4552w"
+                src={computer1x.src}
+                srcSet={`${computer1x.src} 1138w, ${computer2x.src} 2276w, ${computer3x.src} 3414w, ${computer4x.src} 4552w`}
                 sizes="(min-width: 768px) 85vw, 100vw"
                 alt=""
                 aria-hidden="true"
@@ -135,7 +144,7 @@ const FAQ: React.FC = () => {
               className="relative z-10 flex w-full flex-col items-center px-[10%] pt-[12vh] pb-20 md:absolute md:top-[4%] md:left-[8%] md:w-[84%] md:items-stretch md:px-0 md:pt-0 md:pb-16"
             >
               <img
-                src="/faq/faq-sticky.svg"
+                src={faqSticky.src}
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none z-10 w-[32%] -rotate-3 select-none md:w-[18%] md:self-center"
