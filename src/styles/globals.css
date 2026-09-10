@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-satoshi), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-display: var(--font-young-serif), ui-serif, Georgia, "Times New Roman",
-    serif;
+  --font-display:
+    var(--font-young-serif), ui-serif, Georgia, "Times New Roman", serif;
 
   /* The pterodactyl glides with a slow, soaring flap. Both wings beat in
      unison; because they sit on opposite sides of the body, raising them
