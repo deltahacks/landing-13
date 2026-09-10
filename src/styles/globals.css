@@ -1,6 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-young-serif), ui-serif, Georgia, "Times New Roman",
+    serif;
+
+  /* The pterodactyl glides with a slow, soaring flap. Both wings beat in
+     unison; because they sit on opposite sides of the body, raising them
+     reads as opposite rotations on screen. */
+  --animate-ptero-flap-back: ptero-flap-back 4s ease-in-out infinite;
+  --animate-ptero-flap-front: ptero-flap-front 4s ease-in-out infinite;
+
+  @keyframes ptero-flap-back {
+    0%,
+    100% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(7deg);
+    }
+  }
+
+  @keyframes ptero-flap-front {
+    0%,
+    100% {
+      transform: rotate(4deg);
+    }
+    50% {
+      transform: rotate(-7deg);
+    }
+  }
 }
