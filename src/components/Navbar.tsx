@@ -129,7 +129,7 @@ const Navbar = () => {
         </div>
 
         {/* Right (desktop): social links, with room reserved for the badge */}
-        <div className="hidden items-center gap-5 md:flex md:pr-24 lg:pr-28">
+        <div className="hidden items-center gap-5 md:flex md:pr-20 lg:pr-24">
           {socialLinks.map(({ label, href, Icon, placeholder }) => (
             <a
               key={label}
@@ -158,7 +158,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           aria-label="MLH Trust Badge"
           className={clsx(
-            "absolute top-0 right-16 z-30 block w-11 md:right-6 md:w-20",
+            "absolute top-0 right-5 z-30 block w-20 md:right-6",
             focusRing,
           )}
         >
@@ -171,7 +171,7 @@ const Navbar = () => {
         </a>
 
         {/* Right (mobile): hamburger + drawer */}
-        <div className="md:hidden">
+        <div className="mr-20 md:hidden">
           <Drawer.Root
             direction="right"
             open={open}
