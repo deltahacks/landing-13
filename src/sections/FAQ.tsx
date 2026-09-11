@@ -92,7 +92,7 @@ const FAQ: React.FC = () => {
       />
       <section
         id="faq"
-        className="relative isolate w-full overflow-hidden bg-gradient-to-b from-slate-200 to-slate-300"
+        className="relative isolate w-full scroll-mt-20 overflow-hidden bg-gradient-to-b from-slate-200 to-slate-300"
       >
         <img
           src={faqBg1x.src}

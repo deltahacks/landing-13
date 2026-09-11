@@ -115,7 +115,7 @@ export default function Stats() {
   return (
     <section
       id="statistics"
-      className="relative w-full overflow-hidden bg-[#f7e8c8]"
+      className="relative w-full scroll-mt-20 overflow-hidden bg-[#f7e8c8]"
     >
       <h2
         className={`${styles.fontYoungSerif} pointer-events-none absolute top-4 left-5 z-20 text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:top-[14.5%] md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]`}

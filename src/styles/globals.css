@@ -7,6 +7,8 @@
   --font-display:
     var(--font-young-serif), ui-serif, Georgia, "Times New Roman", serif;
 
+  --color-ink: #303a3d;
+
   /* The pterodactyl glides with a slow, soaring flap. Both wings beat in
      unison; because they sit on opposite sides of the body, raising them
      reads as opposite rotations on screen. */
