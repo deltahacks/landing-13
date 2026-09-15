@@ -106,6 +106,12 @@ export default async function Hero() {
         className="pointer-events-none absolute top-[83.19vw] left-1/2 z-30 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-[28.33vw] md:w-full"
       />
       <HeroCopy applicationsOpen={applicationsOpen} />
+      <div
+        className="pointer-events-none absolute top-[66.6vw] left-[calc(50%+5px)] z-[35] h-[64vw] w-[92vw] -translate-x-1/2 overflow-hidden opacity-30 mix-blend-screen md:top-[13.8vw] md:left-1/2 md:h-[46vw] md:w-[63vw]"
+        aria-hidden="true"
+      >
+        <div className="animate-portal-glow-rays absolute inset-[-12%_-20%] bg-[radial-gradient(ellipse_at_50%_39%,rgba(228,255,255,0.72)_0%,rgba(109,235,255,0.22)_28%,transparent_67%),linear-gradient(104deg,transparent_31%,rgba(231,255,255,0.16)_46%,transparent_61%),linear-gradient(76deg,transparent_34%,rgba(231,255,255,0.13)_49%,transparent_64%)] blur-[16px] motion-reduce:animate-none md:blur-[28px]" />
+      </div>
       <Image
         src={portal}
         alt="A glowing DeltaHacks portal"

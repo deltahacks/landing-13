@@ -17,6 +17,7 @@
   --animate-hero-dino-bob: hero-dino-bob 900ms ease-in-out infinite;
   --animate-hero-dino-walk-left: hero-dino-walk-left 24s linear infinite;
   --animate-hero-dino-walk-right: hero-dino-walk-right 24s linear infinite;
+  --animate-portal-glow-rays: portal-glow-rays 6s ease-in-out infinite alternate;
 
   @keyframes ptero-flap-back {
     0%,
@@ -57,6 +58,17 @@
   @keyframes hero-dino-walk-right {
     to {
       transform: translateX(133.361vw);
+    }
+  }
+
+  @keyframes portal-glow-rays {
+    from {
+      transform: translateY(-3%);
+      opacity: 0.55;
+    }
+    to {
+      transform: translateY(3%);
+      opacity: 0.9;
     }
   }
 }
