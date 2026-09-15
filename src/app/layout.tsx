@@ -5,6 +5,7 @@ import { Young_Serif } from "next/font/google";
 import localFont from "next/font/local";
 
 import Navbar from "~/components/Navbar";
+import { PostHogProvider } from "~/components/PostHogProvider";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -48,8 +49,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${satoshi.variable} ${youngSerif.variable}`}>
       <body>
-        <Navbar />
-        {children}
+        <PostHogProvider>
+          <Navbar />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
