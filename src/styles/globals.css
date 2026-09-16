@@ -14,6 +14,10 @@
      reads as opposite rotations on screen. */
   --animate-ptero-flap-back: ptero-flap-back 4s ease-in-out infinite;
   --animate-ptero-flap-front: ptero-flap-front 4s ease-in-out infinite;
+  --animate-hero-dino-bob: hero-dino-bob 900ms ease-in-out infinite;
+  --animate-hero-dino-walk-left: hero-dino-walk-left 24s linear infinite;
+  --animate-hero-dino-walk-right: hero-dino-walk-right 24s linear infinite;
+  --animate-portal-glow-rays: portal-glow-rays 6s ease-in-out infinite alternate;
 
   @keyframes ptero-flap-back {
     0%,
@@ -32,6 +36,39 @@
     }
     50% {
       transform: rotate(-7deg);
+    }
+  }
+
+  @keyframes hero-dino-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.65vw);
+    }
+  }
+
+  @keyframes hero-dino-walk-left {
+    to {
+      transform: translateX(136.865vw);
+    }
+  }
+
+  @keyframes hero-dino-walk-right {
+    to {
+      transform: translateX(133.361vw);
+    }
+  }
+
+  @keyframes portal-glow-rays {
+    from {
+      transform: translateY(-3%);
+      opacity: 0.55;
+    }
+    to {
+      transform: translateY(3%);
+      opacity: 0.9;
     }
   }
 }
