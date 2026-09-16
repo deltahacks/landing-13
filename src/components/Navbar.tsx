@@ -104,7 +104,7 @@ const Navbar = () => {
         {/* Left: logo + desktop section links */}
         <div className="flex items-center gap-8">
           <Link
-            href="/"
+            href="#hero"
             aria-label="DeltaHacks home"
             className={clsx("shrink-0", focusRing)}
           >
