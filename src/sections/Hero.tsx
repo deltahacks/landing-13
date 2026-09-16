@@ -10,7 +10,7 @@ import dinosaurs from "~/assets/hero/dinos.svg";
 import portal from "~/assets/hero/Portal.svg";
 import { posthogServerClient } from "~/lib/posthog";
 
-import HeroDinosaurWalk from "./HeroDinosaurWalk";
+import HeroDinosaurWalk from "../components/HeroDinosaurWalk";
 
 type DecorativeImageProps = Pick<ImageProps, "className" | "sizes" | "src">;
 
