@@ -18,6 +18,7 @@
   --animate-hero-dino-walk-left: hero-dino-walk-left 24s linear infinite;
   --animate-hero-dino-walk-right: hero-dino-walk-right 24s linear infinite;
   --animate-portal-glow-rays: portal-glow-rays 6s ease-in-out infinite alternate;
+  --animate-speaker-wobble: speaker-wobble 650ms ease-in-out;
 
   @keyframes ptero-flap-back {
     0%,
@@ -69,6 +70,25 @@
     to {
       transform: translateY(3%);
       opacity: 0.9;
+    }
+  }
+
+  @keyframes speaker-wobble {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-3deg);
+    }
+    40% {
+      transform: rotate(3deg);
+    }
+    60% {
+      transform: rotate(-2deg);
+    }
+    80% {
+      transform: rotate(1deg);
     }
   }
 }
