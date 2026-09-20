@@ -446,7 +446,7 @@ function MobileSpeakerCarousel() {
 }
 
 export default function Speakers() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const desktopCaptionRef = useRef<HTMLElement>(null);
   const [hasEnteredView, setHasEnteredView] = useState(false);
   const [entranceRotations, setEntranceRotations] = useState<number[]>(() =>
     speakers.map((speaker) => speaker.frameBox.rotation ?? 0),
@@ -473,31 +473,30 @@ export default function Speakers() {
   useEffect(() => {
     if (!rotationsReady) return;
 
-    const section = sectionRef.current;
+    const desktopCaption = desktopCaptionRef.current;
 
-    if (!section || !("IntersectionObserver" in window)) {
+    if (!desktopCaption || !("IntersectionObserver" in window)) {
       setHasEnteredView(true);
       return;
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry?.isIntersecting) return;
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
 
         setHasEnteredView(true);
         observer.disconnect();
       },
-      { threshold: 0.2 },
+      { threshold: 0 },
     );
 
-    observer.observe(section);
+    observer.observe(desktopCaption);
 
     return () => observer.disconnect();
   }, [rotationsReady]);
 
   return (
     <section
-      ref={sectionRef}
       id="speakers"
       aria-label="Past keynote speakers"
       className="[container-type:inline-size] relative isolate aspect-[8/11] w-full scroll-mt-20 overflow-hidden bg-[#677659] font-sans text-white md:aspect-[1434/1157] md:bg-[#f4f2ed]"
@@ -614,6 +613,7 @@ export default function Speakers() {
               className="peer-hover:animate-speaker-wobble pointer-events-none absolute z-10 h-auto max-w-none transition-transform duration-1000 ease-out select-none motion-reduce:animate-none motion-reduce:transition-none"
             />
             <figcaption
+              ref={index === 0 ? desktopCaptionRef : undefined}
               style={placement(speaker.captionX, 777, 277)}
               className="absolute z-20 text-[1.25523cqw] leading-[1.33333] tracking-[-0.025em]"
             >
