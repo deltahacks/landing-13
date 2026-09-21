@@ -22,26 +22,44 @@ const FRAME_WIDTH = 1434;
 const FRAME_HEIGHT = 1157;
 
 const MOBILE_GREEN_TILES = [
-  { left: "-96.77%", width: "81.59%", height: "124.29%" },
+  {
+    left: "-96.77%",
+    width: "calc(81.59% + 1px)",
+    height: "124.29%",
+  },
   {
     left: "-15.16%",
-    width: "81.59%",
+    width: "calc(81.59% + 1px)",
     height: "124.29%",
     transform: "scaleX(-1)",
   },
-  { left: "66.17%", width: "81.59%", height: "124.29%" },
+  {
+    left: "66.17%",
+    width: "calc(81.59% + 1px)",
+    height: "124.29%",
+  },
 ] satisfies CSSProperties[];
 
 const DESKTOP_GREEN_TILES = [
-  { left: "-9.34%", top: "3.37%", width: "40.93%", height: "90.15%" },
+  {
+    left: "-9.34%",
+    top: "3.37%",
+    width: "calc(40.93% + 1px)",
+    height: "90.15%",
+  },
   {
     left: "31.59%",
     top: "3.37%",
-    width: "40.93%",
+    width: "calc(40.93% + 1px)",
     height: "90.15%",
     transform: "scaleX(-1)",
   },
-  { left: "72.38%", top: "3.37%", width: "40.93%", height: "90.15%" },
+  {
+    left: "72.38%",
+    top: "3.37%",
+    width: "calc(40.93% + 1px)",
+    height: "90.15%",
+  },
 ] satisfies CSSProperties[];
 
 type ArtworkBox = {
