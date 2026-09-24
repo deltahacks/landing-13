@@ -56,11 +56,11 @@ const GOLD: Slot[] = empty(1);
 const COLUMNS: Shelf[][] = [
   [
     { size: "large", slots: [...SILVER, ...empty(1)], mascot: GEAR_DINO },
-    { size: "medium", slots: [...BRONZE, ...empty(2)] },
+    { size: "small", slots: [...IN_KIND, ...empty(2)] },
   ],
   [
     { size: "xlarge", slots: GOLD },
-    { size: "small", slots: [...IN_KIND, ...empty(2)], mascot: CAR_DINO },
+    { size: "medium", slots: [...BRONZE, ...empty(2)], mascot: CAR_DINO },
   ],
 ];
 
