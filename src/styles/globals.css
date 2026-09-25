@@ -19,6 +19,7 @@
   --animate-hero-dino-walk-right: hero-dino-walk-right 24s linear infinite;
   --animate-portal-glow-rays: portal-glow-rays 6s ease-in-out infinite alternate;
   --animate-speaker-wobble: speaker-wobble 650ms ease-in-out;
+  --animate-team-marquee: team-marquee 40s linear infinite;
 
   @keyframes ptero-flap-back {
     0%,
@@ -89,6 +90,17 @@
     }
     80% {
       transform: rotate(1deg);
+    }
+  }
+
+  /* The footer's team strip renders the roster twice, so translating the track
+     by exactly half its width loops without a visible seam. */
+  @keyframes team-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }
