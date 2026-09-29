@@ -15,7 +15,7 @@ import HeroDinosaurWalk from "../components/HeroDinosaurWalk";
 type DecorativeImageProps = Pick<ImageProps, "className" | "sizes" | "src">;
 
 const heroClassName =
-  "relative isolate -mt-[3.75rem] min-h-[max(100svh,161.94vw)] overflow-hidden bg-[linear-gradient(to_bottom,#7fc5f9_7.187%,#87e6fb_19.878%,#d3f7ff_41.131%)] md:min-h-[max(100svh,75.35vw)]";
+  "relative isolate -mt-[3.75rem] min-h-[161.94vw] overflow-hidden bg-[linear-gradient(to_bottom,#7fc5f9_7.187%,#87e6fb_19.878%,#d3f7ff_41.131%)] md:min-h-[86.944vw]";
 
 function DecorativeImage({ className, sizes, src }: DecorativeImageProps) {
   return (
@@ -80,7 +80,7 @@ export default async function Hero() {
   const applicationsOpen = await areApplicationsOpen();
 
   return (
-    <section className={heroClassName} aria-label="DeltaHacks 13">
+    <section id="hero" className={heroClassName} aria-label="DeltaHacks 13">
       <DecorativeImage
         src={clouds}
         sizes="(min-width: 768px) 100vw, 137vw"
@@ -125,5 +125,24 @@ export default async function Hero() {
         className="pointer-events-none absolute top-[120.15vw] left-1/2 z-50 h-auto w-[64.4vw] max-w-none -translate-x-1/2 select-none md:top-[55.35vw] md:left-[28.125vw] md:w-[46.94vw] md:translate-x-0"
       />
     </section>
+  );
+}
+
+/**
+ * The foreground painting deliberately continues into About in the Figma
+ * composition. Keeping this as a dedicated, clipped layer prevents the hero's
+ * other absolutely-positioned artwork from leaking into the next section.
+ */
+export function HeroAboutTransition() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none relative z-20 h-0">
+      <div className="absolute top-0 right-0 left-0 h-[13.93vw] overflow-hidden md:h-[9.31vw]">
+        <DecorativeImage
+          src={greeneryForeground}
+          sizes="(min-width: 768px) 100vw, 137vw"
+          className="absolute top-[-78.75vw] left-1/2 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-[-58.61vw] md:w-full"
+        />
+      </div>
+    </div>
   );
 }
