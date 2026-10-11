@@ -59,7 +59,7 @@ function HeroCopy({ applicationsOpen }: { applicationsOpen: boolean }) {
         McMaster&apos;s Annual Hackathon for Change
       </p>
       <p className="absolute top-[54.98vw] left-[calc(50%+5px)] z-30 m-0 -translate-x-1/2 text-[18px] leading-normal font-bold whitespace-nowrap text-[#303a3d] md:top-[18.542vw] md:left-1/2 md:text-[clamp(12px,1.25vw,18px)]">
-        Jan 10-11, 2027 • In Person
+        Jan 9-10, 2027 • In Person
       </p>
       {applicationsOpen && <ApplyButton />}
     </>
