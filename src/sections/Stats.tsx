@@ -151,7 +151,7 @@ export default function Stats() {
 
       <div className={styles.statsStage}>
         <h2
-          className={`${styles.fontYoungSerif} pointer-events-none absolute top-[14.5%] left-5 z-20 w-[280px] text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]`}
+          className={`${styles.fontYoungSerif} pointer-events-none absolute top-[5%] md:top-[14.5%] left-5 z-20 w-[280px] text-left text-[22px] leading-[100%] font-normal tracking-normal text-white md:left-1/2 md:w-93.5 md:-translate-x-1/2 md:text-center md:text-[36px]`}
         >
           Last year we had...
         </h2>
