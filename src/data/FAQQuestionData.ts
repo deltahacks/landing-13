@@ -9,7 +9,7 @@ export const faq_questions: QuestionType[] = [
   {
     question: "What is DeltaHacks?",
     answer:
-      "The word “delta Δ” means change, which inspired the name DeltaHacks - McMaster's annual Hackathon for Change. This year, DeltaHacks will host hundreds of participants in January 2026. We aim to inspire students to hack for positive change in areas like the environment, health, inequality, education, and more!",
+      "The word “delta Δ” means change, which inspired the name DeltaHacks - McMaster's annual Hackathon for Change. This year, DeltaHacks will host hundreds of participants in January 2027. We aim to inspire students to hack for positive change in areas like the environment, health, inequality, education, and more!",
   },
   {
     question: "Who can participate?",

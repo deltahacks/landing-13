@@ -552,7 +552,7 @@ export default function Speakers() {
         <GreenWall tiles={DESKTOP_GREEN_TILES} sizes="41vw" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-[84%] left-[-0.91%] -z-10 h-[15%] w-[84.87%]"
+          className="pointer-events-none absolute top-[84%] bottom-0 left-[-0.91%] -z-10 w-[84.87%]"
         >
           <Image
             src={woodenPanelling}
@@ -565,7 +565,7 @@ export default function Speakers() {
         </div>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-[84%] left-[82.5%] -z-10 h-[15%] w-[18.41%] -scale-x-100 overflow-hidden"
+          className="pointer-events-none absolute top-[84%] bottom-0 left-[82.5%] -z-10 w-[18.41%] -scale-x-100 overflow-hidden"
         >
           <Image
             src={woodenPanelling}
@@ -640,10 +640,6 @@ export default function Speakers() {
             </figcaption>
           </figure>
         ))}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[4.14866%] bg-gradient-to-b from-transparent to-[#f4f2ed]"
-        />
       </div>
     </section>
   );

@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+html {
+  background-color: #7fc5f9;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #7fc5f9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @theme {
   --font-sans:
     var(--font-satoshi), ui-sans-serif, system-ui, sans-serif,
