@@ -42,7 +42,10 @@
   width: 112%;
   height: auto;
   max-width: none;
+  transform-origin: 50% 45%;
+  animation: music-sheets-flutter 2.8s ease-in-out infinite;
   user-select: none;
+  will-change: transform;
 }
 
 .mozartDino {
@@ -55,8 +58,9 @@
   max-width: 310px;
   height: auto;
   transform-origin: 52% 70%;
-  animation: mozart-piano-wiggle 820ms ease-in-out infinite;
+  animation: mozart-piano-play 1.5s ease-in-out infinite;
   user-select: none;
+  will-change: transform;
 }
 
 .statsStage {
@@ -65,19 +69,29 @@
   margin-top: -18vw;
 }
 
-@keyframes mozart-piano-wiggle {
+@keyframes music-sheets-flutter {
   0%,
   100% {
-    transform: translate(0, 0) rotate(-1.5deg);
-  }
-  25% {
-    transform: translate(-1.5%, 1.3%) rotate(2deg);
+    transform: translate(0, 0) rotate(-1deg);
   }
   50% {
-    transform: translate(1%, -0.5%) rotate(-2deg);
+    transform: translate(0.6%, -0.8%) rotate(1deg);
+  }
+}
+
+@keyframes mozart-piano-play {
+  0%,
+  100% {
+    transform: translate(-15%, 1.2%) rotate(-1.5deg);
+  }
+  25% {
+    transform: translate(-2%, 1.5%) rotate(2deg);
+  }
+  50% {
+    transform: translate(15%, -1.5%) rotate(-2deg);
   }
   75% {
-    transform: translate(-0.5%, 1%) rotate(1.5deg);
+    transform: translate(2%, 0.5%) rotate(1.5deg);
   }
 }
 
@@ -181,6 +195,10 @@
   }
 
   .mozartDino {
+    animation: none;
+  }
+
+  .musicSheets {
     animation: none;
   }
 }
