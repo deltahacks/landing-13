@@ -3,6 +3,7 @@ import FAQ from "~/sections/FAQ";
 import Footer from "~/sections/Footer";
 import Hero, { HeroAboutTransition } from "~/sections/Hero";
 import Questions from "~/sections/Questions";
+import SpeakerHeaderDivider from "~/sections/SpeakerHeaderDivider";
 import Speakers from "~/sections/Speakers";
 import Sponsors from "~/sections/Sponsors";
 import Stats from "~/sections/Stats";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HeroAboutTransition />
       <About />
       <Stats />
+      <SpeakerHeaderDivider />
       <Speakers />
       <Sponsors />
       <FAQ />

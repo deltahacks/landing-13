@@ -105,7 +105,7 @@ const speakers: Speaker[] = [
       rotation: 5.61,
     },
     portraitCrop: { left: -22.18, top: 0, width: 144.36, height: 120.95 },
-    frameBox: { x: 66.952, y: 419.467, width: 441.408, rotation: 4.69 },
+    frameBox: { x: 66.952, y: 519.467, width: 441.408, rotation: 4.69 },
     captionX: 107,
     mobileWidth: 72,
   },
@@ -127,7 +127,7 @@ const speakers: Speaker[] = [
       width: 144.08,
       height: 118,
     },
-    frameBox: { x: 560.319, y: 371.354, width: 345.6, rotation: -5.04 },
+    frameBox: { x: 560.319, y: 471.354, width: 345.6, rotation: -5.04 },
     captionX: 608,
     mobileWidth: 50,
     mobileSideTop: 9,
@@ -151,7 +151,7 @@ const speakers: Speaker[] = [
       width: 132.3,
       height: 104.92,
     },
-    frameBox: { x: 968.212, y: 392.212, width: 373.248, rotation: 7.66 },
+    frameBox: { x: 968.212, y: 492.212, width: 373.248, rotation: 7.66 },
     captionX: 1016,
     mobileWidth: 56,
   },
@@ -517,13 +517,13 @@ export default function Speakers() {
     <section
       id="speakers"
       aria-label="Past keynote speakers"
-      className="[container-type:inline-size] relative isolate aspect-[8/11] w-full scroll-mt-20 overflow-hidden bg-[#677659] font-sans text-white md:aspect-[1434/1157] md:bg-[#f4f2ed]"
+      className="[container-type:inline-size] relative isolate aspect-[16/27] w-full scroll-mt-20 overflow-hidden bg-[#677659] font-sans text-white md:aspect-[1434/1157] md:bg-[#f4f2ed]"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 md:hidden"
       >
-        <div className="absolute inset-x-0 top-0 aspect-[6/7] overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <GreenWall tiles={MOBILE_GREEN_TILES} sizes="82vw" />
         </div>
         <Image
@@ -534,7 +534,7 @@ export default function Speakers() {
           className="absolute inset-x-0 bottom-0 h-auto w-full select-none"
         />
       </div>
-      <div className="absolute inset-x-0 top-0 aspect-[6/7] md:hidden">
+      <div className="absolute inset-x-0 top-[31.25vw] aspect-[6/7] md:top-0 md:hidden">
         <h2
           id="speakers-heading-mobile"
           className="font-display absolute top-[6.8%] left-[9%] w-[76%] text-[clamp(1.25rem,5vw,1.5rem)] leading-[1.18] font-normal"
@@ -552,7 +552,7 @@ export default function Speakers() {
         <GreenWall tiles={DESKTOP_GREEN_TILES} sizes="41vw" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-[77.18%] left-[-0.91%] -z-10 h-[21.87%] w-[84.87%]"
+          className="pointer-events-none absolute top-[84%] left-[-0.91%] -z-10 h-[15%] w-[84.87%]"
         >
           <Image
             src={woodenPanelling}
@@ -565,7 +565,7 @@ export default function Speakers() {
         </div>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-[77.18%] left-[82.5%] -z-10 h-[21.87%] w-[18.41%] -scale-x-100 overflow-hidden"
+          className="pointer-events-none absolute top-[84%] left-[82.5%] -z-10 h-[15%] w-[18.41%] -scale-x-100 overflow-hidden"
         >
           <Image
             src={woodenPanelling}
@@ -577,13 +577,13 @@ export default function Speakers() {
         </div>
         <h2
           id="speakers-heading"
-          style={placement(107, 286, 599)}
+          style={placement(107, 380, 599)}
           className="font-display absolute text-[2.23152cqw] leading-[1.4] font-normal whitespace-nowrap"
         >
           Engage with industry professionals...
         </h2>
         <p
-          style={placement(107, 333, 553)}
+          style={placement(107, 429, 553)}
           className="absolute text-[1.25523cqw] leading-[1.33333] font-medium tracking-[-0.025em]"
         >
           DeltaHacks is your chance to learn directly from leading figures in
@@ -632,7 +632,7 @@ export default function Speakers() {
             />
             <figcaption
               ref={index === 0 ? desktopCaptionRef : undefined}
-              style={placement(speaker.captionX, 777, 277)}
+              style={placement(speaker.captionX, 870, 277)}
               className="absolute z-20 text-[1.25523cqw] leading-[1.33333] tracking-[-0.025em]"
             >
               <p className="font-bold">{speaker.name}</p>
