@@ -1,3 +1,135 @@
+/* The painted interlude overlaps the statistics sky. The fade is painted,
+   rather than repeating the About artwork, so the river never appears twice. */
+.statsSection {
+  z-index: 10;
+  margin-top: 0;
+}
+
+.transition {
+  position: relative;
+  margin-top: 0;
+  height: 82vw;
+  min-height: 340px;
+  max-height: 500px;
+  overflow: visible;
+  background: linear-gradient(
+    180deg,
+    rgb(209, 216, 219) 1.3439%,
+    rgb(179, 205, 229) 5.5471%,
+    rgb(52, 142, 230) 9.518%,
+    rgb(52, 142, 230) 100%
+  );
+}
+
+.piano {
+  pointer-events: none;
+  position: absolute;
+  z-index: 40;
+  top: 2%;
+  left: -24%;
+  width: 148%;
+  height: auto;
+  max-width: none;
+  user-select: none;
+}
+
+.musicSheets {
+  pointer-events: none;
+  position: absolute;
+  z-index: 41;
+  top: -30%;
+  left: -5%;
+  width: 112%;
+  height: auto;
+  max-width: none;
+  transform-origin: 50% 45%;
+  animation: music-sheets-flutter 2.8s ease-in-out infinite;
+  user-select: none;
+  will-change: transform;
+}
+
+.mozartDino {
+  pointer-events: none;
+  position: absolute;
+  z-index: 42;
+  top: 28%;
+  right: 5%;
+  width: 42vw;
+  max-width: 310px;
+  height: auto;
+  transform-origin: 52% 70%;
+  animation: mozart-piano-play 1.5s ease-in-out infinite;
+  user-select: none;
+  will-change: transform;
+}
+
+.statsStage {
+  position: relative;
+  z-index: 2;
+  margin-top: -18vw;
+}
+
+@keyframes music-sheets-flutter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate(0.6%, -0.8%) rotate(1deg);
+  }
+}
+
+@keyframes mozart-piano-play {
+  0%,
+  100% {
+    transform: translate(-15%, 1.2%) rotate(-1.5deg);
+  }
+  25% {
+    transform: translate(-2%, 1.5%) rotate(2deg);
+  }
+  50% {
+    transform: translate(15%, -1.5%) rotate(-2deg);
+  }
+  75% {
+    transform: translate(2%, 0.5%) rotate(1.5deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .statsSection {
+    margin-top: 0;
+  }
+
+  .transition {
+    height: 32vw;
+    min-height: 380px;
+    max-height: 510px;
+  }
+
+  .piano {
+    top: -20%;
+    left: -5%;
+    width: 110%;
+  }
+
+  .musicSheets {
+    top: -46%;
+    left: 2%;
+    width: 86%;
+  }
+
+  .mozartDino {
+    top: 35%;
+    right: 12%;
+    width: 25vw;
+    max-width: 380px;
+  }
+
+  .statsStage {
+    margin-top: -10vw;
+  }
+}
+
 @keyframes flying-dino-enter {
   from {
     opacity: 0;
@@ -59,6 +191,14 @@
   .flyingDinoEnter,
   .parachuteDinoFly,
   .cloudDinoDrift {
+    animation: none;
+  }
+
+  .mozartDino {
+    animation: none;
+  }
+
+  .musicSheets {
     animation: none;
   }
 }
