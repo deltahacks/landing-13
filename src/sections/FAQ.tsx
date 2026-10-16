@@ -55,6 +55,7 @@ const FAQ: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let mobileLayoutKey = "";
     const recompute = () => {
       const outer = outerRef.current;
       const computer = computerRef.current;
@@ -63,9 +64,47 @@ const FAQ: React.FC = () => {
 
       if (window.innerWidth < MD_BREAKPOINT_PX) {
         outer.style.minHeight = "";
+        // Opening an answer also triggers this observer. Skip measuring again unless the viewport, fonts, or sticky image size has changed.
+        const layoutKey = `${content.clientWidth}:${window.innerHeight}:${document.fonts.status}:${content.querySelector("img")?.offsetHeight}`;
+        if (layoutKey === mobileLayoutKey) return;
+        mobileLayoutKey = layoutKey;
+
+        // Measure a hidden copy so we don't open or change any of the real cards.
+        const measurement = content.cloneNode(true) as HTMLDivElement;
+        measurement.setAttribute("aria-hidden", "true");
+        measurement.inert = true;
+        measurement.style.cssText = "position:absolute;visibility:hidden;";
+        const questions = Array.from(measurement.querySelectorAll("details"));
+        // Open every copied answer and clear any height left by an animation so we can measure the full text.
+        for (const question of questions) {
+          question.open = true;
+          question.style.height = "";
+          question.style.overflow = "";
+        }
+        computer.appendChild(measurement);
+        // Subtract the question header to get just the space each answer adds.
+        const answerHeights = questions.map(
+          (question) =>
+            question.getBoundingClientRect().height -
+            (question.querySelector("summary")?.getBoundingClientRect()
+              .height ?? 0),
+        );
+        // Start with everything open, subtract all the answers, then add back the tallest one.
+        const reservedHeight =
+          measurement.getBoundingClientRect().height -
+          answerHeights.reduce((total, height) => total + height, 0) +
+          Math.max(0, ...answerHeights);
+        measurement.remove();
+        // Keep this much room even when the cards are closed, so opening one doesn't make the container taller and resize both art layers.
+        computer.style.setProperty(
+          "--faq-mobile-min-height",
+          `${Math.ceil(reservedHeight)}px`,
+        );
         return;
       }
 
+      // Measure again if we resize back to the mobile layout later.
+      mobileLayoutKey = "";
       const requiredBelowOuterOffset =
         DINO_MARGIN_RATIO * computer.offsetHeight + content.offsetHeight;
       outer.style.minHeight = `${Math.ceil(requiredBelowOuterOffset / COMPUTER_VISIBLE_HEIGHT_RATIO)}px`;
@@ -77,7 +116,18 @@ const FAQ: React.FC = () => {
     if (computerRef.current) resizeObserver.observe(computerRef.current);
     if (contentRef.current) resizeObserver.observe(contentRef.current);
 
-    return () => resizeObserver.disconnect();
+    // The final font can wrap answers differently, so refresh the reserved height once it loads, even if the viewport hasn't changed.
+    const onFontsLoaded = () => {
+      if (window.innerWidth >= MD_BREAKPOINT_PX) return;
+      mobileLayoutKey = "";
+      recompute();
+    };
+    document.fonts.addEventListener("loadingdone", onFontsLoaded);
+
+    return () => {
+      resizeObserver.disconnect();
+      document.fonts.removeEventListener("loadingdone", onFontsLoaded);
+    };
   }, []);
 
   return (
@@ -126,7 +176,7 @@ const FAQ: React.FC = () => {
 
           <div
             ref={computerRef}
-            className="relative isolate mx-auto w-full md:absolute md:inset-x-0 md:top-[8%] md:w-[85%]"
+            className="relative isolate mx-auto w-full max-md:min-h-[var(--faq-mobile-min-height)] md:absolute md:inset-x-0 md:top-[8%] md:w-[85%]"
           >
             <div className="absolute inset-0 overflow-hidden md:contents">
               <img
