@@ -317,7 +317,7 @@ function MobileSpeakerArtwork({
         // ratios after image decode; it prevents the stage from jumping.
         minHeight: `${frameHeight}vw`,
       }}
-      className={`absolute origin-center transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none ${slotClassName}`}
+      className={`absolute origin-center transition-[left,top,transform,opacity] duration-500 ease-out motion-reduce:transition-none ${slotClassName}`}
     >
       {speaker.portrait && (
         <div
