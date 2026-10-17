@@ -90,11 +90,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full">
+    <header className="sticky top-0 z-40 flex w-full justify-center">
       <nav
         aria-label="Primary"
         className={clsx(
-          "text-ink relative flex w-full items-center justify-between gap-4 px-5 py-3 transition-all duration-300 ease-in-out md:px-10",
+          "text-ink md:border-ink/15 relative flex w-full items-center justify-between gap-4 px-5 py-3 transition-all duration-300 ease-in-out md:mt-5 md:w-[calc(100%-3rem)] md:rounded-full md:border md:bg-[#e8f6fd]/25 md:px-8 md:py-2 md:shadow-[0_8px_24px_rgba(48,58,61,0.08)] md:backdrop-blur-md",
           scrolled
             ? "bg-white/70 shadow-sm backdrop-blur-md"
             : "bg-transparent",
@@ -158,7 +158,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           aria-label="MLH Trust Badge"
           className={clsx(
-            "absolute top-0 right-5 z-30 block w-20 md:right-6",
+            "absolute top-0 right-5 z-30 block w-20 md:-top-[21px] md:right-6",
             focusRing,
           )}
         >
