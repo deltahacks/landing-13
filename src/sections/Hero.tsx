@@ -36,7 +36,7 @@ function ApplyButton() {
       href="https://portal.deltahacks.com"
       target="_blank"
       rel="noreferrer"
-      className="absolute top-[61.19vw] left-[calc(50%+5px)] z-30 inline-flex h-[47px] w-[132px] -translate-x-1/2 items-center justify-center gap-2 rounded-[15px] bg-gradient-to-r from-[#303a3d] to-[#355c68] pt-px text-[16px] leading-none font-bold text-white shadow-[2px_5px_0_#303a3d,0px_4px_4px_rgba(0,0,0,0.25)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:top-[21.319vw] md:left-1/2 md:h-[clamp(34px,3.264vw,47px)] md:w-[clamp(128px,12.222vw,176px)] md:text-[clamp(15px,1.389vw,20px)]"
+      className="relative z-30 mt-[4vw] inline-flex h-[clamp(42px,11.5vw,47px)] w-[clamp(120px,33vw,132px)] items-center justify-center gap-2 rounded-[15px] bg-gradient-to-r from-[#303a3d] to-[#355c68] pt-px text-[clamp(15px,4vw,16px)] leading-none font-bold text-white shadow-[2px_5px_0_#303a3d,0px_4px_4px_rgba(0,0,0,0.25)] transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:absolute md:top-[21.319vw] md:left-1/2 md:mt-0 md:h-[clamp(34px,3.264vw,47px)] md:w-[clamp(128px,12.222vw,176px)] md:-translate-x-1/2 md:text-[clamp(15px,1.389vw,20px)]"
     >
       Apply Now
       <Image
@@ -51,18 +51,18 @@ function ApplyButton() {
 
 function HeroCopy({ applicationsOpen }: { applicationsOpen: boolean }) {
   return (
-    <>
-      <h1 className="font-display absolute top-[37.81vw] left-[calc(50%+5px)] z-30 m-0 -translate-x-1/2 text-[55px] leading-none font-normal tracking-[-0.4px] whitespace-nowrap text-[#32464c] md:top-[10.625vw] md:left-1/2 md:text-[clamp(40px,4.861vw,70px)] md:tracking-[-0.0486vw]">
+    <div className="absolute top-[max(35vw,9rem)] right-0 left-0 z-[45] flex flex-col items-center pr-6 pl-[calc(1.5rem+10px)] text-center md:contents">
+      <h1 className="font-display m-0 text-[clamp(32px,10vw,44px)] leading-none font-normal tracking-[-0.4px] whitespace-nowrap text-[#32464c] md:absolute md:top-[10.625vw] md:left-1/2 md:z-30 md:-translate-x-1/2 md:text-[clamp(40px,4.861vw,70px)] md:tracking-[-0.0486vw]">
         DeltaHacks 13
       </h1>
-      <p className="absolute top-[50.25vw] left-[calc(50%+5px)] z-30 m-0 -translate-x-1/2 text-[18px] leading-normal font-bold whitespace-nowrap text-[#303a3d] md:top-[16.667vw] md:left-1/2 md:text-[clamp(12px,1.25vw,18px)]">
+      <p className="m-0 mt-[2.5vw] text-[clamp(13px,3.6vw,16px)] leading-[1.4] font-bold text-[#303a3d] md:absolute md:top-[16.667vw] md:left-1/2 md:z-30 md:mt-0 md:-translate-x-1/2 md:text-[clamp(12px,1.25vw,18px)] md:leading-normal md:whitespace-nowrap">
         McMaster&apos;s Annual Hackathon for Change
       </p>
-      <p className="absolute top-[54.98vw] left-[calc(50%+5px)] z-30 m-0 -translate-x-1/2 text-[18px] leading-normal font-bold whitespace-nowrap text-[#303a3d] md:top-[18.542vw] md:left-1/2 md:text-[clamp(12px,1.25vw,18px)]">
+      <p className="m-0 mt-[0.5vw] text-[clamp(13px,3.6vw,16px)] leading-[1.4] font-bold text-[#303a3d] md:absolute md:top-[18.542vw] md:left-1/2 md:z-30 md:mt-0 md:-translate-x-1/2 md:text-[clamp(12px,1.25vw,18px)] md:leading-normal md:whitespace-nowrap">
         Jan 9-10, 2027 • In Person
       </p>
       {applicationsOpen && <ApplyButton />}
-    </>
+    </div>
   );
 }
 
