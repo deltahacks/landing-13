@@ -32,8 +32,8 @@ const desktopDinosaurs: DesktopDinosaur[] = [
 ];
 
 const mobileDinosaurPositions = [
-  "absolute top-[70.04vw] left-[8.89vw] h-[44.21vw] w-[36.86vw]",
-  "absolute top-[74.03vw] left-[46.53vw] h-[40.02vw] w-[33.36vw]",
+  "absolute top-[61vw] left-[-6.38vw] h-[64.5vw] w-[47.18vw]",
+  "absolute top-[70.69vw] left-[50.79vw] h-[44.18vw] w-[36.83vw]",
 ];
 
 function DinosaurArt({ className }: { className: string }) {
@@ -112,7 +112,7 @@ export default function HeroDinosaurWalk() {
       <div className="md:hidden">
         {mobileDinosaurPositions.map((className) => (
           <div key={className} className={className}>
-            <DinosaurArt className="relative size-full rotate-[8.38deg] skew-x-[0.47deg]" />
+            <DinosaurArt className="relative size-full skew-x-[0.47deg]" />
           </div>
         ))}
       </div>
