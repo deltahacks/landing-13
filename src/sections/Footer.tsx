@@ -33,14 +33,14 @@ const Footer: React.FC = () => (
   // than the frame and must not add page-level horizontal scroll, but it also
   // has to spill vertically above the top edge. `clip` bounds one axis without
   // forcing the other into a scroll container, which `hidden` would.
-  <footer className="@container relative isolate w-full overflow-x-clip">
+  <footer className="@container relative isolate w-full overflow-x-clip pt-5 md:pt-3">
     <img
       src={footerBgMobile1x.src}
       srcSet={`${footerBgMobile1x.src} 402w, ${footerBgMobile2x.src} 804w, ${footerBgMobile3x.src} 1206w, ${footerBgMobile4x.src} 1608w`}
       sizes="100vw"
       alt=""
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover select-none md:hidden"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-fill select-none md:hidden"
     />
     <img
       src={footerBg1x.src}
@@ -60,7 +60,7 @@ const Footer: React.FC = () => (
       sizes="108vw"
       alt=""
       aria-hidden="true"
-      className="pointer-events-none absolute top-0 -left-[4%] -z-[5] h-[43px] w-[108%] max-w-none -translate-y-1/2 select-none md:hidden"
+      className="pointer-events-none absolute top-0 -left-[4%] z-0 h-[43px] w-[108%] max-w-none -translate-y-1/2 select-none md:hidden"
     />
     <img
       src={seamFade1x.src}
@@ -71,11 +71,13 @@ const Footer: React.FC = () => (
       className="pointer-events-none absolute top-0 -left-[1%] -z-[5] hidden h-[43px] w-[102%] max-w-none -translate-y-1/2 select-none md:block"
     />
 
-    <TeamCarousel />
+    <div className="relative z-10">
+      <TeamCarousel />
+    </div>
 
     <nav
       aria-label="Footer"
-      className="font-display mt-[calc(-2.04px_+_4.2389cqw)] flex flex-wrap items-center justify-center gap-x-[calc(13.48px_+_2.1195cqw)] gap-y-2 px-4 text-[calc(8.963px_+_0.7803cqw)] text-white"
+      className="font-display relative z-10 mt-[calc(-2.04px_+_4.2389cqw)] flex flex-wrap items-center justify-center gap-x-[calc(13.48px_+_2.1195cqw)] gap-y-2 px-4 text-[calc(8.963px_+_0.7803cqw)] text-white"
     >
       {footerLinks.map(({ label, href }) => (
         <a
@@ -90,7 +92,7 @@ const Footer: React.FC = () => (
       ))}
     </nav>
 
-    <p className="font-display mt-[calc(3.929px_+_1.7341cqw)] pb-[calc(50.206px_+_1.7148cqw)] text-center text-[calc(9.779px_+_1.0501cqw)] text-white">
+    <p className="font-display relative z-10 mt-[calc(3.929px_+_1.7341cqw)] pb-[calc(50.206px_+_1.7148cqw)] text-center text-[calc(9.779px_+_1.0501cqw)] text-white md:pb-[calc(70.206px_+_1.7148cqw)]">
       {COPYRIGHT_TEXT}
     </p>
   </footer>
