@@ -93,7 +93,7 @@ export default async function Hero() {
       <DecorativeImage
         src={hills}
         sizes="(min-width: 768px) 100vw, 137vw"
-        className="pointer-events-none absolute top-[44.53vw] left-1/2 z-20 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-0 md:w-full md:left-0 md:translate-x-0"
+        className="pointer-events-none absolute top-[44.53vw] left-1/2 z-20 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-0 md:left-0 md:w-full md:translate-x-0"
       />
       <HeroDinosaurWalk />
       <div
