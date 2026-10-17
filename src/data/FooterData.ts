@@ -1,20 +1,3 @@
-export const TEAM_PHOTO_SLOT_COUNT = 12;
-
-/** Figma's placeholder grey, used until real team photos land. */
-export const TEAM_PHOTO_PLACEHOLDER_FILL = "#D9D9D9";
-
-export type TeamPhoto = {
-  name: string;
-  /** Imported asset `src`. Null until photography is delivered. */
-  src: string | null;
-};
-
-// TODO: replace with the real roster once team photos are delivered.
-export const teamPhotos: TeamPhoto[] = Array.from(
-  { length: TEAM_PHOTO_SLOT_COUNT },
-  () => ({ name: "", src: null }),
-);
-
 export type FooterLink = {
   label: string;
   href: string;
