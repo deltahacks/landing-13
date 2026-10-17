@@ -1,3 +1,8 @@
+"use client";
+
+import AutoScroll from "embla-carousel-auto-scroll";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback } from "react";
 import clsx from "clsx";
 
 import {
@@ -9,8 +14,6 @@ import {
 /** 82px at 1440 wide and 37px at 402, interpolated so it never jumps at a breakpoint. */
 const SLOT_SIZE =
   "h-[calc(19.572px_+_4.3353cqw)] w-[calc(19.572px_+_4.3353cqw)]";
-// Per-item margin, not a flex `gap`: `gap` leaves the last slot without
-// trailing space, so the -50% loop would drift half a gap per cycle.
 const SLOT_ADVANCE = "mr-[calc(5.829px_+_1.4355cqw)]";
 
 const TeamSlot: React.FC<{ photo: TeamPhoto }> = ({ photo }) =>
@@ -28,33 +31,47 @@ const TeamSlot: React.FC<{ photo: TeamPhoto }> = ({ photo }) =>
     />
   );
 
-/**
- * The footer's one required animation. No photography exists yet, so every slot
- * renders as the grey circle the design shows; the motion is already wired.
- */
 const TeamCarousel: React.FC = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true },
+    [AutoScroll({ startDelay: 0, stopOnMouseEnter: true, speed: 0.5 })],
+  );
   const hasPhotos = teamPhotos.some((photo) => photo.src);
-  // Twice over, so the -50% translation wraps seamlessly.
-  const track = [...teamPhotos, ...teamPhotos];
+  const track = Array.from({ length: 3 }, () => teamPhotos).flat();
+
+  const stopAutoScroll = useCallback(() => {
+    emblaApi?.plugins().autoScroll?.stop();
+  }, [emblaApi]);
+
+  const resumeAutoScroll = useCallback(() => {
+    emblaApi?.plugins().autoScroll?.play();
+  }, [emblaApi]);
 
   return (
     <div
       className="w-full overflow-hidden"
-      role={hasPhotos ? "group" : undefined}
-      aria-label={hasPhotos ? "DeltaHacks team" : undefined}
+      role={hasPhotos ? "region" : undefined}
+      aria-label={hasPhotos ? "DeltaHacks team photo carousel" : undefined}
       aria-hidden={hasPhotos ? undefined : "true"}
     >
-      <ul className="flex w-max animate-(--animate-team-marquee) motion-reduce:animate-none">
-        {track.map((photo, index) => (
-          <li
-            key={index}
-            aria-hidden={index >= teamPhotos.length ? "true" : undefined}
-            className={clsx("shrink-0", SLOT_ADVANCE)}
-          >
-            <TeamSlot photo={photo} />
-          </li>
-        ))}
-      </ul>
+      <div
+        ref={emblaRef}
+        className="cursor-grab overflow-hidden touch-pan-y select-none active:cursor-grabbing"
+        onPointerDown={stopAutoScroll}
+        onPointerLeave={resumeAutoScroll}
+      >
+        <div className="flex items-center">
+          {track.map((photo, index) => (
+            <div
+              key={index}
+              aria-hidden={index >= teamPhotos.length ? "true" : undefined}
+              className={clsx("shrink-0", SLOT_ADVANCE)}
+            >
+              <TeamSlot photo={photo} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
