@@ -3,10 +3,30 @@
 html {
   background-color: #7fc5f9;
   scroll-behavior: smooth;
+  scrollbar-color: #526d73 #7fc5f9;
+  scrollbar-width: thin;
 }
 
 body {
   background-color: #7fc5f9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7fc5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #526d73;
+  border: 2px solid #7fc5f9;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #303a3d;
 }
 
 @media (prefers-reduced-motion: reduce) {
