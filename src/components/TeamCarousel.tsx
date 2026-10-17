@@ -32,10 +32,9 @@ const TeamSlot: React.FC<{ photo: TeamPhoto }> = ({ photo }) =>
   );
 
 const TeamCarousel: React.FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true },
-    [AutoScroll({ startDelay: 0, stopOnMouseEnter: true, speed: 0.5 })],
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    AutoScroll({ startDelay: 0, stopOnMouseEnter: true, speed: 0.5 }),
+  ]);
   const hasPhotos = teamPhotos.some((photo) => photo.src);
   const track = Array.from({ length: 3 }, () => teamPhotos).flat();
 
@@ -56,7 +55,7 @@ const TeamCarousel: React.FC = () => {
     >
       <div
         ref={emblaRef}
-        className="cursor-grab overflow-hidden touch-pan-y select-none active:cursor-grabbing"
+        className="cursor-grab touch-pan-y overflow-hidden select-none active:cursor-grabbing"
         onPointerDown={stopAutoScroll}
         onPointerLeave={resumeAutoScroll}
       >
