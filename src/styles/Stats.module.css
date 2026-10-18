@@ -168,8 +168,18 @@
 }
 
 @media (min-width: 768px) {
+  /* Account for the wrapper's 20vw left offset to loop at the viewport edges. */
+  @keyframes parachute-dino-fly {
+    from {
+      transform: translateX(calc(-100% - 20vw));
+    }
+    to {
+      transform: translateX(80vw);
+    }
+  }
+
   .parachuteDinoFly {
-    animation-duration: 10s;
+    animation-duration: 5s;
   }
 }
 
