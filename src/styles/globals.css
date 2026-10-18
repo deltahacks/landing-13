@@ -29,9 +29,9 @@ body {
      reads as opposite rotations on screen. */
   --animate-ptero-flap-back: ptero-flap-back 4s ease-in-out infinite;
   --animate-ptero-flap-front: ptero-flap-front 4s ease-in-out infinite;
-  --animate-hero-dino-bob: hero-dino-bob 900ms ease-in-out infinite;
-  --animate-hero-dino-walk-left: hero-dino-walk-left 24s linear infinite;
-  --animate-hero-dino-walk-right: hero-dino-walk-right 24s linear infinite;
+  --animate-hero-dino-bob: hero-dino-bob 2s ease-in-out infinite;
+  --animate-hero-dino-walk-left: hero-dino-walk-left 50s linear infinite;
+  --animate-hero-dino-walk-right: hero-dino-walk-right 50s linear infinite;
   --animate-portal-glow-rays: portal-glow-rays 6s ease-in-out infinite alternate;
   --animate-speaker-wobble: speaker-wobble 650ms ease-in-out;
   --animate-team-marquee: team-marquee 40s linear infinite;
@@ -62,7 +62,7 @@ body {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-0.65vw);
+      transform: translateY(-0.5vw);
     }
   }
 
