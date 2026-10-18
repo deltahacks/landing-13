@@ -13,9 +13,9 @@ import greenBackground from "~/assets/speakers/green-background.png";
 import leftFrame from "~/assets/speakers/frames/left-frame.webp";
 import middleFrame from "~/assets/speakers/frames/middle-frame.webp";
 import rightFrame from "~/assets/speakers/frames/right-frame.webp";
-// import leftSpeaker from "~/assets/speakers/portraits/left-speaker.webp";
-// import middleSpeaker from "~/assets/speakers/portraits/middle-speaker.webp";
-// import rightSpeaker from "~/assets/speakers/portraits/right-speaker.webp";
+import leftSpeaker from "~/assets/speakers/portraits/left-speaker.webp";
+import middleSpeaker from "~/assets/speakers/portraits/middle-speaker.webp";
+import rightSpeaker from "~/assets/speakers/portraits/right-speaker.webp";
 import woodenPanelling from "~/assets/speakers/wooden-panelling.png";
 
 const FRAME_WIDTH = 1434;
@@ -95,16 +95,16 @@ const speakers: Speaker[] = [
   {
     name: "Ivan Zhang",
     title: "Co-founder of Cohere",
-    // portrait: leftSpeaker,
+    portrait: leftSpeaker,
     frame: leftFrame,
     portraitBox: {
-      x: 124.386,
-      y: 499.469,
-      width: 310.964,
-      height: 208.78,
+      x: 144.336,
+      y: 593.058,
+      width: 268.362,
+      height: 201.806,
       rotation: 5.61,
     },
-    portraitCrop: { left: -22.18, top: 0, width: 144.36, height: 120.95 },
+    portraitCrop: { left: -16.84, top: 0, width: 133.69, height: 100 },
     frameBox: { x: 66.952, y: 519.467, width: 441.408, rotation: 4.69 },
     captionX: 107,
     mobileWidth: 72,
@@ -112,20 +112,20 @@ const speakers: Speaker[] = [
   {
     name: "Vivek Alamuri",
     title: "ML Engineer @ Snowflake",
-    // portrait: middleSpeaker,
+    portrait: middleSpeaker,
     frame: middleFrame,
     portraitBox: {
-      x: 631.06,
-      y: 462.121,
-      width: 207.881,
-      height: 253.838,
+      x: 625.407,
+      y: 557.466,
+      width: 215.136,
+      height: 260.928,
       rotation: -5.68,
     },
     portraitCrop: {
-      left: -34.18,
-      top: -9.27,
-      width: 144.08,
-      height: 118,
+      left: -10.64,
+      top: 0,
+      width: 121.29,
+      height: 100,
     },
     frameBox: { x: 560.319, y: 471.354, width: 345.6, rotation: -5.04 },
     captionX: 608,
@@ -135,21 +135,21 @@ const speakers: Speaker[] = [
   {
     name: "Chris Bautista",
     title: "Senior Software Engineer @ Netflix",
-    // portrait: rightSpeaker,
+    portrait: rightSpeaker,
     frame: rightFrame,
     portraitBox: {
-      x: 1024.338,
-      y: 423.159,
-      width: 249.089,
-      height: 314.085,
+      x: 1034.23,
+      y: 524.405,
+      width: 241.6,
+      height: 309.252,
       rotation: 6.63,
       borderRadius: "50%",
     },
     portraitCrop: {
-      left: -17.99,
-      top: 2.03,
-      width: 132.3,
-      height: 104.92,
+      left: -14,
+      top: 0,
+      width: 128,
+      height: 100,
     },
     frameBox: { x: 968.212, y: 492.212, width: 373.248, rotation: 7.66 },
     captionX: 1016,
