@@ -5,7 +5,7 @@ import { unstable_noStore as noStore } from "next/cache";
 import applyNowArrow from "~/assets/hero/btn-icon/apply-now-arrow.svg";
 import clouds from "~/assets/hero/clouds/clouds_1x.webp";
 import greeneryForeground from "~/assets/hero/greenery_foreground/greenery_foreground_1x.webp";
-import hills from "~/assets/hero/hills/hills_1x.webp";
+import hills from "~/assets/hero/hills/hills_4x.webp";
 import dinosaurs from "~/assets/hero/dinos.svg";
 import portal from "~/assets/hero/Portal.svg";
 import { posthogServerClient } from "~/lib/posthog";
@@ -93,7 +93,7 @@ export default async function Hero() {
       <DecorativeImage
         src={hills}
         sizes="(min-width: 768px) 100vw, 137vw"
-        className="pointer-events-none absolute top-[44.53vw] left-1/2 z-20 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-0 md:w-full"
+        className="pointer-events-none absolute top-[44.53vw] left-1/2 z-20 h-auto w-[136.57vw] max-w-none -translate-x-1/2 select-none md:top-0 md:left-0 md:w-full md:translate-x-0"
       />
       <HeroDinosaurWalk />
       <div
