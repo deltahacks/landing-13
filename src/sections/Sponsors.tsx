@@ -150,7 +150,7 @@ function Column({ shelves }: { shelves: Shelf[] }) {
         <span
           key={side}
           aria-hidden
-          className={`absolute -inset-y-[100vw] -z-10 w-[max(2px,0.15vw)] bg-[repeating-linear-gradient(165deg,#2f2d2b_0_3px,#6b625a_3px_4px)] ${side}`}
+          className={`absolute -inset-y-[100vw] -z-10 w-[max(2px,0.15vw)] bg-[repeating-linear-gradient(165deg,#2f2d2b_0_3px,#6b625a_3px_4px)] [mask-image:linear-gradient(to_bottom,rgb(0_0_0/0.3)_calc(100vw-12vw),black_100vw)] opacity-70 blur-[0.5px] ${side}`}
         />
       ))}
       {shelves.map(({ size, slots, mascot }, shelfIndex) => (
@@ -184,8 +184,13 @@ export default function Sponsors() {
     <section
       id="sponsors"
       aria-labelledby="sponsors-heading"
-      className="relative w-full scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#3C2520_0%,#7C5A4A_50%,#F3F2F1_100%)] px-[11vw] pt-[7vw] pb-[6vw] md:aspect-[1440/1684] md:pb-0"
+      className="relative w-full scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#3C2520_0%,#7C5A4A_50%,#F3F2F1_100%)] px-[11vw] pt-[13vw] pb-[6vw] md:aspect-[1440/1684] md:pt-[7vw] md:pb-0"
     >
+      {/* Shadow under the Speakers wood panel so the seam fades instead of cutting. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[6vw] bg-gradient-to-b from-black/45 to-transparent"
+      />
       <h2
         id="sponsors-heading"
         className="font-display relative z-30 text-center text-[max(1.0625rem,1.7vw)] text-white"
