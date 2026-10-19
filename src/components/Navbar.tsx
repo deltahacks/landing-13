@@ -8,7 +8,7 @@ import clsx from "clsx";
 import Logo from "./svgs/Logo";
 import InstagramIcon from "./svgs/InstagramIcon";
 import LinkedinIcon from "./svgs/LinkedinIcon";
-import DevpostIcon from "./svgs/DevpostIcon";
+// import DevpostIcon from "./svgs/DevpostIcon";
 import TiktokIcon from "./svgs/TiktokIcon";
 import MenuIcon from "./svgs/MenuIcon";
 import CloseIcon from "./svgs/CloseIcon";
@@ -34,13 +34,14 @@ const socialLinks = [
     Icon: LinkedinIcon,
     placeholder: false,
   },
-  {
-    // TODO: replace with the real Devpost URL once the DH13 Devpost exists.
-    label: "Devpost",
-    href: "#",
-    Icon: DevpostIcon,
-    placeholder: true,
-  },
+  // Temporarily hidden until the DH13 Devpost exists.
+  // {
+  //   // TODO: replace with the real Devpost URL once the DH13 Devpost exists.
+  //   label: "Devpost",
+  //   href: "#",
+  //   Icon: DevpostIcon,
+  //   placeholder: true,
+  // },
   {
     label: "TikTok",
     href: "https://www.tiktok.com/@deltahacks",
