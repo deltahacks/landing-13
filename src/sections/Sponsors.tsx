@@ -1,15 +1,29 @@
 import Image, { type StaticImageData } from "next/image";
 import { Fragment } from "react";
 
-import accenture from "~/assets/sponsors/accenture.png";
-import backboard from "~/assets/sponsors/backboard.png";
+import onePassword from "~/assets/sponsors/past/1password.svg";
+import accenture from "~/assets/sponsors/past/accenture.svg";
+import beeceptor from "~/assets/sponsors/past/beeceptor.png";
+import figma from "~/assets/sponsors/past/figma.svg";
+import incogni from "~/assets/sponsors/past/incogni.svg";
+import intuit from "~/assets/sponsors/past/intuit.svg";
+import jamesDyson from "~/assets/sponsors/past/jamesdyson.svg";
+import manulife from "~/assets/sponsors/past/manulife.svg";
+import mcmaster from "~/assets/sponsors/past/mcmaster.svg";
+import mes from "~/assets/sponsors/past/mes.svg";
+import mongodb from "~/assets/sponsors/past/mongodb.png";
+import moorcheh from "~/assets/sponsors/past/moorcheh.png";
+import nexosai from "~/assets/sponsors/past/nexosai.png";
+import nordpass from "~/assets/sponsors/past/nordpass.svg";
+import nordprotect from "~/assets/sponsors/past/nordprotect.png";
+import nordvpn from "~/assets/sponsors/past/nordvpn.svg";
+import saily from "~/assets/sponsors/past/saily.svg";
+import swift from "~/assets/sponsors/past/swift.svg";
+import tailscale from "~/assets/sponsors/past/tailscale.svg";
+import vercel from "~/assets/sponsors/past/vercel.svg";
 import carDino from "~/assets/sponsors/car-dino.svg";
-import genesys from "~/assets/sponsors/genesys.png";
-import manulife from "~/assets/sponsors/manulife.svg";
-import tinkered from "~/assets/sponsors/tinkered.png";
 import windowBottom from "~/assets/sponsors/window-bottom.svg";
 import windowTop from "~/assets/sponsors/window-top.svg";
-import wsp from "~/assets/sponsors/wsp.png";
 import gearDino from "~/assets/sponsors/yellow-gear-dino.svg";
 
 type Size = "xlarge" | "large" | "medium" | "small";
@@ -21,8 +35,6 @@ type Mascot = { src: StaticImageData; className: string };
 
 type Shelf = { size: Size; slots: Slot[]; mascot?: Mascot };
 
-const empty = (count: number): Slot[] => Array<Slot>(count).fill(null);
-
 const GEAR_DINO: Mascot = {
   src: gearDino,
   className: "mr-[10%] ml-auto w-[45%] translate-y-[1.2vw]",
@@ -32,43 +44,75 @@ const CAR_DINO: Mascot = {
   className: "mx-auto w-[95%] translate-y-[0.5vw]",
 };
 
-const SILVER: Slot[] = [
+// Last year's (DeltaHacks 12) sponsors.
+const GOLD: Slot[] = [
   {
-    name: "Manulife",
-    href: "https://careers.manulife.com/global/en/students",
-    logo: manulife,
+    name: "McMaster Engineering Society",
+    href: "https://www.macengsociety.ca/",
+    logo: mes,
+  },
+  {
+    name: "McMaster Engineering",
+    href: "https://www.eng.mcmaster.ca/",
+    logo: mcmaster,
   },
 ];
 
+const SILVER: Slot[] = [
+  { name: "Tailscale", href: "https://tailscale.com/", logo: tailscale },
+];
+
 const BRONZE: Slot[] = [
-  { name: "Accenture", href: "https://www.accenture.com/en", logo: accenture },
-  { name: "Genesys", logo: genesys },
-  { name: "WSP", logo: wsp },
+  { name: "Accenture", href: "https://www.accenture.com/", logo: accenture },
+  {
+    name: "James Dyson Foundation",
+    href: "https://www.jamesdysonaward.org/",
+    logo: jamesDyson,
+  },
+  { name: "Intuit", href: "https://www.intuit.com/", logo: intuit },
+  { name: "Manulife", href: "https://www.manulife.ca/", logo: manulife },
 ];
 
 const IN_KIND: Slot[] = [
-  { name: "backboard.io", logo: backboard },
-  { name: "Tinkered AI", href: "https://www.tinkered.ai", logo: tinkered },
+  { name: "Vercel", href: "https://vercel.com/", logo: vercel },
+  {
+    name: "Swift",
+    href: "https://developer.apple.com/swift-student-challenge/",
+    logo: swift,
+  },
+  { name: "Moorcheh", href: "https://www.moorcheh.ai/", logo: moorcheh },
+  { name: "Figma", href: "https://www.figma.com/", logo: figma },
+  { name: "1Password", href: "https://www.1password.com/", logo: onePassword },
+  { name: "NordVPN", href: "https://nordvpn.com/hackathons", logo: nordvpn },
+  { name: "NordPass", href: "https://nordpass.com/", logo: nordpass },
+  { name: "Incogni", href: "https://incogni.com/", logo: incogni },
+  { name: "Saily", href: "https://saily.com/", logo: saily },
+  { name: "nexos.ai", href: "https://nexos.ai/", logo: nexosai },
+  { name: "Nord Protect", href: "https://nordprotect.com/", logo: nordprotect },
+  { name: "Beeceptor", href: "https://beeceptor.com/", logo: beeceptor },
+  { name: "MongoDB", href: "https://www.mongodb.com/", logo: mongodb },
 ];
 
-const GOLD: Slot[] = empty(1);
+// Desktop splits in-kind across both columns so their heights stay close.
+const IN_KIND_LEFT = 10;
 
 const COLUMNS: Shelf[][] = [
   [
-    { size: "large", slots: [...SILVER, ...empty(1)], mascot: GEAR_DINO },
-    { size: "small", slots: [...IN_KIND, ...empty(2)] },
+    { size: "large", slots: SILVER, mascot: GEAR_DINO },
+    { size: "small", slots: IN_KIND.slice(0, IN_KIND_LEFT) },
   ],
   [
     { size: "xlarge", slots: GOLD },
-    { size: "medium", slots: [...BRONZE, ...empty(2)], mascot: CAR_DINO },
+    { size: "medium", slots: BRONZE, mascot: CAR_DINO },
+    { size: "small", slots: IN_KIND.slice(IN_KIND_LEFT) },
   ],
 ];
 
 const MOBILE: Shelf[] = [
   { size: "xlarge", slots: GOLD },
-  { size: "large", slots: [...SILVER, ...empty(1)] },
-  { size: "medium", slots: [...BRONZE, ...empty(2)] },
-  { size: "small", slots: [...IN_KIND, ...empty(2)] },
+  { size: "large", slots: SILVER },
+  { size: "medium", slots: BRONZE },
+  { size: "small", slots: IN_KIND },
 ];
 
 const SHELF_STACK: Record<Size, string> = {
@@ -78,11 +122,12 @@ const SHELF_STACK: Record<Size, string> = {
   small: "text-[min(11vw,2.75rem)] md:text-[max(1rem,4.2vw)]",
 };
 
+// Anchored in vw (the old 1440/1684 frame) so they stay put when the shelves grow.
 const WINDOWS: { src: StaticImageData; className: string }[] = [
-  { src: windowTop, className: "top-[15.4%] -left-[4vw]" },
-  { src: windowTop, className: "top-[7.3%] -right-[3.5vw]" },
-  { src: windowBottom, className: "top-[54.3%] -left-[2vw]" },
-  { src: windowBottom, className: "top-[54.3%] -right-[3.3vw]" },
+  { src: windowTop, className: "top-[18vw] -left-[4vw]" },
+  { src: windowTop, className: "top-[8.5vw] -right-[3.5vw]" },
+  { src: windowBottom, className: "top-[63.5vw] -left-[2vw]" },
+  { src: windowBottom, className: "top-[63.5vw] -right-[3.3vw]" },
 ];
 
 // Constant area per logo so wide and squat marks carry equal weight.
@@ -184,7 +229,7 @@ export default function Sponsors() {
     <section
       id="sponsors"
       aria-labelledby="sponsors-heading"
-      className="relative w-full scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#3C2520_0%,#7C5A4A_50%,#F3F2F1_100%)] px-[11vw] pt-[13vw] pb-[6vw] md:aspect-[1440/1684] md:pt-[7vw] md:pb-0"
+      className="relative w-full scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#3C2520_0%,#7C5A4A_50%,#F3F2F1_100%)] px-[11vw] pt-[13vw] pb-[6vw] md:min-h-[116.94vw] md:pt-[7vw]"
     >
       {/* Shadow under the Speakers wood panel so the seam fades instead of cutting. */}
       <div
@@ -195,7 +240,7 @@ export default function Sponsors() {
         id="sponsors-heading"
         className="font-display relative z-30 text-center text-[max(1.0625rem,1.7vw)] text-white"
       >
-        A thank you to our sponsors...
+        Last Year&apos;s Sponsors
       </h2>
       <div className="relative z-20 mt-[13.5vw] hidden items-start justify-center gap-[1.85vw] md:flex">
         {COLUMNS.map((shelves, columnIndex) => (
