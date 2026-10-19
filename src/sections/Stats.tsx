@@ -21,11 +21,11 @@ import styles from "../styles/Stats.module.css";
 
 const statFields = [
   {
-    text: "24 workshops",
+    text: "12+ workshops",
     curve: "top",
   },
   {
-    text: "224+ projects submitted",
+    text: "140+ projects",
     curve: "top",
   },
   {
@@ -33,11 +33,11 @@ const statFields = [
     curve: "bottom",
   },
   {
-    text: "1000+ hackers",
+    text: "600+ hackers",
     curve: "bottom",
   },
   {
-    text: "60+ mentors",
+    text: "50+ mentors",
     curve: "bottom",
   },
 ] as const;
