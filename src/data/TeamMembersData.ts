@@ -13,7 +13,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Technical",
     programYear: "Computer Science 3rd Year",
     funFact: "I can play the piano",
-    fileName: "abdul-moeez-shaikh.jpg",
+    fileName: "abdul-moeez-shaikh.webp",
     emoji: "🐢",
   },
   {
@@ -21,7 +21,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Technical",
     programYear: "Computer Science Year 3",
     funFact: "I can solve a Rubiks Cube",
-    fileName: "abishan-bhavananthan.jpg",
+    fileName: "abishan-bhavananthan.webp",
     emoji: "🍟",
   },
   {
@@ -29,7 +29,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Technical",
     programYear: "Computer Science, 4th year",
     funFact: "I like rock climbing 🧗‍♀️",
-    fileName: "allison-zhao.jpeg",
+    fileName: "allison-zhao.webp",
     emoji: "❄",
   },
   {
@@ -37,7 +37,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Technical",
     programYear: "Software Engineering, Year 2",
     funFact: "Can solve a Rubik's Cube in under 10 seconds",
-    fileName: "ian-yeh.jpg",
+    fileName: "ian-yeh.webp",
     emoji: "🍔",
   },
   {
@@ -46,7 +46,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Level IV Software Engineering",
     funFact:
       "I was actually in Civil Engineering at the University of Waterloo, before coming to McMaster for Software Engineering.",
-    fileName: "jackson-beach.jpg",
+    fileName: "jackson-beach.webp",
     emoji: "🍊",
   },
   {
@@ -55,7 +55,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Computer Science, 1st year",
     funFact:
       "i once snuck into uoft and stayed overnight in a random classroom",
-    fileName: "naman-sonawane.jpg",
+    fileName: "naman-sonawane.webp",
     emoji: "🐬",
   },
   {
@@ -63,7 +63,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Ibiomed & Mechatronics IV",
     funFact: "I have read the harry potter series cover to cover 3 times",
-    fileName: "akash-ahilan.jpeg",
+    fileName: "akash-ahilan.webp",
     emoji: "🤯",
   },
   {
@@ -71,7 +71,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Electrical Engineering, Year 3",
     funFact: "i love snoopy!",
-    fileName: "alice-liang.jpg",
+    fileName: "alice-liang.webp",
     emoji: "🌼",
   },
   {
@@ -79,7 +79,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Mech Eng & Mgmt V",
     funFact: "Half the computers I use are from ewaste bins",
-    fileName: "brant-shi.jpg",
+    fileName: "brant-shi.webp",
     emoji: "🔧",
   },
   {
@@ -88,7 +88,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Computer Engineering 3rd year",
     funFact:
       "I have performed every role there is at a hackathon except for Sponsor",
-    fileName: "jason-cheng.jpg",
+    fileName: "jason-cheng.webp",
     emoji: "⭐",
   },
   {
@@ -96,7 +96,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Software Engineering IV",
     funFact: "This is actually my 6th year at Mac 😀",
-    fileName: "mahad-hassan.jpeg",
+    fileName: "mahad-hassan.webp",
     emoji: "😸",
   },
   {
@@ -104,7 +104,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Bachelors of Computer Science and Business Minor, Level 3",
     funFact: "I love travelling!!",
-    fileName: "pratik-mahaveer-surana.jpg",
+    fileName: "pratik-mahaveer-surana.webp",
     emoji: "✨",
   },
   {
@@ -112,7 +112,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Attendee Relations",
     programYear: "Software Engineering Level 3",
     funFact: "I grew up in Amsterdam, Netherlands",
-    fileName: "ritisha-perumalla.jpeg",
+    fileName: "ritisha-perumalla.webp",
     emoji: "😋",
   },
   {
@@ -121,7 +121,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Computer Engineering, Second Year",
     funFact:
       "I watched the entirety of Avatar: The Last Airbender in 4 days for a debate tournament!",
-    fileName: "tazmeen-mohsin.jpg",
+    fileName: "tazmeen-mohsin.webp",
     emoji: "😸",
   },
   {
@@ -130,7 +130,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Mechanical Engineering II",
     funFact:
       "When I was 7, I mistook a wasp nest for a giant paper ball and kicked it (somehow didn't get stung though)",
-    fileName: "elizabeth-wu.jpeg",
+    fileName: "elizabeth-wu.webp",
     emoji: "💅",
   },
   {
@@ -138,7 +138,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Design",
     programYear: "Math and Computer Science IV",
     funFact: "i know how to make cafe drinks at home ☕️",
-    fileName: "melissa-ho.png",
+    fileName: "melissa-ho.webp",
     emoji: "🍙",
   },
   {
@@ -146,7 +146,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Design",
     programYear: "Chemical Engineering (II)",
     funFact: "I'm a hot chocolate addict :p",
-    fileName: "nida-kamal.jpg",
+    fileName: "nida-kamal.webp",
     emoji: "✨",
   },
   {
@@ -154,7 +154,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Computer Engineering, Year 4",
     funFact: "I've developed an application for the Nintendo DSi!",
-    fileName: "adam-suljak.jpg",
+    fileName: "adam-suljak.webp",
     emoji: "😁",
   },
   {
@@ -162,7 +162,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Software Engineering III",
     funFact: "My cat is named after a Pokèmon!",
-    fileName: "alisha-faridi.jpeg",
+    fileName: "alisha-faridi.webp",
     emoji: "😸",
   },
   {
@@ -178,7 +178,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Software Engineering (4th Year)",
     funFact: "I was a part of Mac's Dragon Boat Team",
-    fileName: "cheukman-zhou.jpg",
+    fileName: "cheukman-zhou.webp",
     emoji: "🤨",
   },
   {
@@ -186,7 +186,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Electrical Engineering & Society, Level 4",
     funFact: "I LOVE GIRAFFES!!! 🦒🦒🦒",
-    fileName: "elizabeth-yorke.jpg",
+    fileName: "elizabeth-yorke.webp",
     emoji: "🦒",
   },
   {
@@ -194,7 +194,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Software Engineering V",
     funFact: "I broke both my arms in a span of 6 months",
-    fileName: "harmanpreet-singh-sagar.jpg",
+    fileName: "harmanpreet-singh-sagar.webp",
     emoji: "🔥",
   },
   {
@@ -202,7 +202,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Computer Engineering IV",
     funFact: "One time i solved a 3x3 in 10.23s",
-    fileName: "maheer-huq.jpg",
+    fileName: "maheer-huq.webp",
     emoji: "🐘",
   },
   {
@@ -210,7 +210,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Events",
     programYear: "Software Engineering, Level 4",
     funFact: "I’m currently learning how to play the piano!",
-    fileName: "maria-akhtar.jpeg",
+    fileName: "maria-akhtar.webp",
     emoji: "😼",
   },
   {
@@ -218,7 +218,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "iBio and elec 2",
     funFact: "I read over 100 books last year!",
-    fileName: "aadvika-mukherjee.jpeg",
+    fileName: "aadvika-mukherjee.webp",
     emoji: "💫",
   },
   {
@@ -226,7 +226,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "Computer Science III",
     funFact: "Monster is better than Red Bull",
-    fileName: "andrew-myrden.png",
+    fileName: "andrew-myrden.webp",
     emoji: "🏒",
   },
   {
@@ -235,7 +235,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Materials Engineering II",
     funFact:
       "I once drank 32 cups of bubble tea in one week (I also got concussed filming a TikTok at 3 am a week before first year exams)",
-    fileName: "chloe-wang.jpeg",
+    fileName: "chloe-wang.webp",
     emoji: "🤓",
   },
   {
@@ -243,7 +243,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "Mechanical engineering and management second year",
     funFact: "i like pickles",
-    fileName: "christine-huang.jpeg",
+    fileName: "christine-huang.webp",
     emoji: "🫪",
   },
   {
@@ -251,7 +251,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "Computer Engineering II",
     funFact: "I love buldak (I've used this fun fact for the last 4 years)",
-    fileName: "jun-nur-mustaqeem.png",
+    fileName: "jun-nur-mustaqeem.webp",
     emoji: "‼",
   },
   {
@@ -259,21 +259,21 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "Elec+iBio V",
     funFact: "my favourite pokemon is budew!!",
-    fileName: "leanne-chen.jpg",
+    fileName: "leanne-chen.webp",
     emoji: "🌿",
   },
   {
     fullName: "Nicholas Ching",
     team: "Logistics",
     programYear: "Computer Engineering, 3",
-    fileName: "nicholas-ching.jpg",
+    fileName: "nicholas-ching.webp",
     emoji: "🔥",
   },
   {
     fullName: "Shona Gupta",
     team: "Logistics",
     programYear: "First year eng",
-    fileName: "shona-gupta.jpg",
+    fileName: "shona-gupta.webp",
     emoji: "🔮",
   },
   {
@@ -281,7 +281,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Logistics",
     programYear: "Electrical and Biomedical Engineering V",
     funFact: "I only use German hand cream to moisturize my hands (chamomile)",
-    fileName: "zara-khan.jpg",
+    fileName: "zara-khan.webp",
     emoji: "🤠",
   },
   {
@@ -289,7 +289,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Chemical Engineering II",
     funFact: "I love collecting keychains",
-    fileName: "hafsah-syeda.jpeg",
+    fileName: "hafsah-syeda.webp",
     emoji: "🍓",
   },
   {
@@ -297,7 +297,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Computer Science, Year 3",
     funFact: "I have a ninja creami",
-    fileName: "hansen-cheng.png",
+    fileName: "hansen-cheng.webp",
     emoji: "🙆",
   },
   {
@@ -305,7 +305,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Software Engineering, 2nd year",
     funFact: "I know how to make ice cream with liquid nitrogen!",
-    fileName: "michele-tse.jpg",
+    fileName: "michele-tse.webp",
     emoji: "🍨",
   },
   {
@@ -313,7 +313,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Electrical Engineering V",
     funFact: "I’ve rewatched aot 6 times",
-    fileName: "remsha-hussain.jpeg",
+    fileName: "remsha-hussain.webp",
     emoji: "⭐",
   },
   {
@@ -321,7 +321,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Software Engineering 5",
     funFact: "Love Martial Arts!",
-    fileName: "rhea-gokhale.jpeg",
+    fileName: "rhea-gokhale.webp",
     emoji: "😼",
   },
   {
@@ -329,7 +329,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Computer Engineering, Year 4",
     funFact: "I love playing badminton",
-    fileName: "sarah-ahmed.jpg",
+    fileName: "sarah-ahmed.webp",
     emoji: "🌇",
   },
   {
@@ -337,14 +337,14 @@ const teamMembers: TeamMemberType[] = [
     team: "Marketing",
     programYear: "Electrical engineering, Year 3",
     funFact: "I have 8 piercings!",
-    fileName: "viha-tripathi.jpeg",
+    fileName: "viha-tripathi.webp",
     emoji: "😎",
   },
   {
     fullName: "Abhinav Dave",
     team: "Sponsorship",
     programYear: "Computer Engineering - Year 2",
-    fileName: "abhinav-dave.png",
+    fileName: "abhinav-dave.webp",
     emoji: "🔐",
   },
   {
@@ -352,7 +352,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Sponsorship",
     programYear: "Software Engineering, Level III",
     funFact: "I've been going to hackathons since middle school!",
-    fileName: "sanika-surose.jpeg",
+    fileName: "sanika-surose.webp",
     emoji: "💸",
   },
   {
@@ -361,7 +361,7 @@ const teamMembers: TeamMemberType[] = [
     programYear: "Computer Science, Third Year",
     funFact:
       "My camera roll is probably 90% pictures of tutorials I told myself I’d look at later.",
-    fileName: "aleesha-merchant.jpeg",
+    fileName: "aleesha-merchant.webp",
     emoji: "🙃",
   },
   {
@@ -369,7 +369,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supportive Relations",
     programYear: "Computer Engineering, 4",
     funFact: "I have a TED talk on YouTube!",
-    fileName: "alex-melnbardis.png",
+    fileName: "alex-melnbardis.webp",
     emoji: "🛂",
   },
   {
@@ -377,7 +377,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supportive Relations",
     programYear: "Computer Science |||",
     funFact: "I have a dog named Thor!",
-    fileName: "anshika-vaid.jpg",
+    fileName: "anshika-vaid.webp",
     emoji: "✨",
   },
   {
@@ -385,7 +385,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supportive Relations",
     programYear: "Computer Engineering and Management Co-op III",
     funFact: "I live in New Brunswick!",
-    fileName: "inemesit-usoro-udo.jpg",
+    fileName: "inemesit-usoro-udo.webp",
     emoji: "🌸",
   },
   {
@@ -393,7 +393,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supportive Relations",
     programYear: "Computer Engineering and Management (year 5))",
     funFact: "My favorite drink is bubble tea",
-    fileName: "jane-d-souza.jpg",
+    fileName: "jane-d-souza.webp",
     emoji: "😋",
   },
   {
@@ -401,7 +401,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supreme Leaders",
     programYear: "BDC 4",
     funFact: "I’m left handed (I can’t think of a fun fact rn)",
-    fileName: "aya-lamer.jpeg",
+    fileName: "aya-lamer.webp",
     emoji: "🦋",
   },
   {
@@ -409,7 +409,7 @@ const teamMembers: TeamMemberType[] = [
     team: "Supreme Leaders",
     programYear: "Computer Engineering V",
     funFact: "I play the guitar!",
-    fileName: "joonseo-lee.jpg",
+    fileName: "joonseo-lee.webp",
     emoji: "🎸",
   },
 ];
